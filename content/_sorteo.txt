@@ -1,0 +1,6 @@
+---
+filter: erb
+---
+<input type="textfield" class="sorteo" /><br/>
+<input type="textfield" class="sorteo" /><br/>
+<input type="textfield" class="sorteo" /><br/>

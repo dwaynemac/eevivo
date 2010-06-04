@@ -1,0 +1,5 @@
+---
+filter: erb
+---
+Student name: <input class="save-this-data" id="student_name" type="textfield"/> <br/>
+Monitor name: <input class="save-this-data" id="monitor_name" type="textfield"/> <br/>

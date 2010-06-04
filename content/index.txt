@@ -1,0 +1,46 @@
+---
+title:       Examen vivo
+created_at:  2008-08-02 14:06:40.000000 -06:00
+filter:
+  - erb
+---
+<div id="tabs">
+  <ul>      
+    <li><a href="#tabs-1">Instrucciones</a></li>
+    <li><a href="#tabs-2">Datos Generales</a></li>
+    <li><a href="#tabs-3">Sorteo</a></li>
+    <li><a href="#tabs-4">Coreo</a></li>
+    <li><a href="#tabs-5">Yôga</a></li>
+    <li><a href="#tabs-6">Pre-Yôga</a></li>
+    <li><a href="#tabs-7">Disertación</a></li>
+    <li><a href="#tabs-8">Resultado</a></li>
+  </ul>
+  <div id="tabs-1">
+    <%= render(:partial => "first-tab") %>
+  </div>
+  <div id="tabs-2">
+    <%= render(:partial => "general-data") %>
+  </div>
+  <div id="tabs-3">
+    <%= render(:partial => "sorteo") %>
+  </div>
+  <div id="tabs-4">
+    en construcción
+  </div>
+  <div id="tabs-5">
+    en construcción
+  </div>
+  <div id="tabs-6">
+    en construcción
+  </div>
+  <div id="tabs-7">
+    en construcción
+  </div>
+  <div id="tabs-8">
+   en construcción
+  </div>
+</div>
+<div id="countdown">
+  put countdown here
+</div>
+<a class="button" id="print-to-pdf" href="#">Print 2 PDF</a>
