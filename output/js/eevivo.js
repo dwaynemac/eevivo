@@ -100,4 +100,5 @@ $('#show-sorteo_avg').text( calculateSorteoAvg() );
 $('.update-sorteo_avg').change( function() {
   $('#sorteo_avg').val( calculateSorteoAvg() );
   $('#show-sorteo_avg').text( calculateSorteoAvg() );
+  $("#show_nota_practica").text(notaPractica());
 });

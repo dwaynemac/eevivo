@@ -59,12 +59,9 @@ filter: erb
 		return total;
 	};
 
-  function notaCoreo(){
-    return totalCoreo()*100/<%= items.size*4 %>;
-  }
-
 	$('.sum-in-coreo_total').change(function(){
 		$('#show_coreo_total').text( totalCoreo() );
+		$("#show_nota_practica").text(notaPractica());
 		$('#coreo_total').val( totalCoreo() );
 		saveObject($('#coreo_total'));
 	});

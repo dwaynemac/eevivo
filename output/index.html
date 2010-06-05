@@ -430,12 +430,9 @@
 		return total;
 	};
 
-  function notaCoreo(){
-    return totalCoreo()*100/100;
-  }
-
 	$('.sum-in-coreo_total').change(function(){
 		$('#show_coreo_total').text( totalCoreo() );
+		$("#show_nota_practica").text(notaPractica());
 		$('#coreo_total').val( totalCoreo() );
 		saveObject($('#coreo_total'));
 	});
@@ -793,7 +790,7 @@
   <tr>
     <td><span class="show-evaluator-name"></span></td>
     <td>teo</td>
-    <td><span id="show_coreo_grade"></span></td>
+    <td><span id="show_nota_practica"></span></td>
     <td>cla</td>
     <td>dise</td>
     <td>total</td>
@@ -816,10 +813,19 @@
     </tr>
 </table>
 <script type="text/javascript">
-  $("#show_coreo_grade").text(notaCoreo());
+  $("#show_nota_practica").text(notaPractica());
   $('.sum-in-coreo_total').change(function(){
-		$("#show_coreo_grade").text(notaCoreo());
+		$("#show_nota_practica").text(notaPractica());
 	});
+	$('.sum-in-sorteo_total').change(function(){
+		$("#show_nota_practica").text(notaPractica());
+	});
+	
+	function notaPractica(){
+    nota_coreo = totalCoreo();
+    nota_sorteo = calculateSorteoAvg()*10;
+    return (nota_coreo + nota_sorteo) / 2.0;
+  }
 </script>
     
   </div>

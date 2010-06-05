@@ -37,22 +37,24 @@ function saveObject(object){
 	file_name = "eev";
   	data_name = file_name+":"+$(object).attr('id');
   	data_value = $(object).val();
-  	/* SWITCHING TO PERSISJS 
-  	$.cookie(data_name, data_value,{ expires: 31 }); */ 
-  	store.set(data_name,data_value);
+  	// Cookies
+  	$.cookie(data_name, data_value,{ expires: 31 });
+  	// PersistJS
+  	// store.set(data_name,data_value);
 }
 
 // retrieves value
 function readFromLocalDB(key){
 	var ret_value;
-	/* SWITCHING TO PERSISJS 
-	 return $.cookie(key); */
-	 store.get(key,function(ok,val){
+	// Cookies
+	 return $.cookie(key);
+  // PersistJS
+	/* store.get(key,function(ok,val){
 	 	if(ok){
 	 		ret_value = val;
 	 	}
 	 });
-	 return ret_value;
+	 return ret_value;*/
 }
 
 // set onChange auto-save to CSS selected fields
