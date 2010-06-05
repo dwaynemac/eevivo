@@ -1,5 +1,43 @@
 ---
 filter: erb
 ---
-Student name: <input class="save-this-data" id="student_name" type="textfield"/> <br/>
-Monitor name: <input class="save-this-data" id="monitor_name" type="textfield"/> <br/>
+<table>
+  <tr>
+    <td>Nombre del alumno:</td>
+    <td><%= txt("evaluated_name", :class => "general-data") %></td>
+  </tr>
+  <tr>
+    <td>Nombre del monitor:</td>
+    <td><%= txt("monitor_name", :class => "general-data") %></td>
+  </tr>
+  <tr>
+    <td>Grado actual:</td>
+    <td><%= rank_select("current_rank", :class => "general-data") %></td>
+  </tr>
+  <tr>
+    <td>Aspira a obtener:</td>
+    <td><%= rank_select("wants_rank", :class => "general-data") %></td>
+  </tr>
+  <tr>
+    <td>Evaluador:</td>
+    <td><%= txt("evaluator_name", :class => "general-data") %></td>
+  </tr>
+  <tr>
+    <td>Fecha:</td>
+    <td><%= txt("date", :class => "general-data") %></td>
+  </tr>
+</table> 
+<script type="text/javascript">
+  // set date picker
+  $(function() {
+      $("#date").datepicker();
+  });
+
+  // set header
+  $('#evaluated_name').change( function(){
+    $('#show-evaluated-name').text( $(this).val() );
+  });
+  $('#evaluator_name').change( function(){
+    $('#show-evaluator-name').text( $(this).val() );
+  });
+</script>

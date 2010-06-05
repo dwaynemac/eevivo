@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Examen vivo</title>
-   <meta name="author" content="" />
+   <title>Evolution - Examen vivo</title>
+   <meta name="author" content="Dwayne Macgowan"/>
 
   <!-- css button -->
   <link type="text/css" href="css/button.css" rel="stylesheet"/>
@@ -94,7 +94,14 @@
   </style>
 </head>
 <body>
-  <div id="tabs">
+  <div style="margin-top: 20px; padding: 0pt 0.7em;" class="ui-state-highlight ui-corner-all">
+    <p>
+      <!-- <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span> -->
+      <strong>Alumno:</strong> <span id="show-evaluated-name">-</span>
+      <strong>Evaluador:</strong> <span id="show-evaluator-name">-</span>
+    </p>
+</div>
+<div id="tabs">
   <ul>      
     <li><a href="#tabs-1">Instrucciones</a></li>
     <li><a href="#tabs-2">Datos Generales</a></li>
@@ -106,27 +113,154 @@
     <li><a href="#tabs-8">Resultado</a></li>
   </ul>
   <div id="tabs-1">
-    <h1>Examen vivo</h1>
+    <h1>Instrucciones para la Mesa Examinadora</h1>
 <p>
-  A partial has access to the page from which it was called. The title below will be the title of the page in which this partial is rendered.
+    La mesa examinadora será responsable de calificar y realizar los promedios para obtener la nota final de cada examinado.<br />
+    Efectuada la calificación final, el presidente de mesa actuante revisará los promedios finales y entregará los resultados, debidamente ordenados, foliados y abrochados, al Presidente de la Federación que sea sede de las pruebas, quedando armado un legajo por cada examinado.
 </p>
+<h2>Los promedios se obtendrán de la siguiente forma:</h2>
 <p>
-  A partial does not have access to it's own meta-data. The partial meta-data is used primarily for finding partials or for use in other pages. The filter(s) specified in the meta-data will be applied to the partial text when it is rendered.
+    Nota de la Prueba escrita <br />
+    Nota obtenida por sorteo de ásanas. <br />
+    Nota obtenida por coreografía de Swásthya Yôga. <br />
+    Promedio de ambas: <br />
+    Nota obtenida por prueba de clase. <br />
+    Promedia con la anterior. <br />
 </p>
-<p>
-  A partial does not require meta-data at all. They can contain just text.
+<p> 
+    Cada integrante de la mesa examinadora realizará el procedimiento indicado precedentemente para obtener su calificación.<br />
+    Luego, los tres integrantes de la mesa realizarán el promedio final entre las tres calificaciones llegando a la nota definitiva.<br />
+    Los resultados no se brindarán en el momento del examen, siendo responsabilidad de la Federación comunicarlo en un plazo de 15 días hábiles posteriores.<br />
+</p>
+<p>     
+    Ser integrante de la mesa examinadora implica aceptar una gran responsabilidad y debe ser ejercida con cuidado, cariño y seriedad. El futuro del Swásthya Yôga está directamente vinculado con esta tarea.
 </p>
   </div>
   <div id="tabs-2">
-    Student name: <input class="save-this-data" id="student_name" type="textfield"/> <br/>
-Monitor name: <input class="save-this-data" id="monitor_name" type="textfield"/> <br/>
+    <table>
+  <tr>
+    <td>Nombre del alumno:</td>
+    <td><input type="textfield"  class="save-this-data general-data" id="evaluated_name"/></td>
+  </tr>
+  <tr>
+    <td>Nombre del monitor:</td>
+    <td><input type="textfield"  class="save-this-data general-data" id="monitor_name"/></td>
+  </tr>
+  <tr>
+    <td>Grado actual:</td>
+    <td>
+      <select id="current_rank"  class="save-this-data general-data" id="current_rank">
+        <option value="1">Aspirante</option>
+        <option value="2">Sádhaka</option>
+        <option value="3">Yôgin</option>
+        <option value="4">Chêla</option>
+        <option value="5">Graduado</option>
+        <option value="6">Asistente</option>
+        <option value="7">Docente</option>
+        <option value="8">Maestro</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td>Aspira a obtener:</td>
+    <td>
+      <select id="wants_rank"  class="save-this-data general-data" id="wants_rank">
+        <option value="1">Aspirante</option>
+        <option value="2">Sádhaka</option>
+        <option value="3">Yôgin</option>
+        <option value="4">Chêla</option>
+        <option value="5">Graduado</option>
+        <option value="6">Asistente</option>
+        <option value="7">Docente</option>
+        <option value="8">Maestro</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td>Evaluador:</td>
+    <td><input type="textfield"  class="save-this-data general-data" id="evaluator_name"/></td>
+  </tr>
+  <tr>
+    <td>Fecha:</td>
+    <td><input type="textfield"  class="save-this-data general-data" id="date"/></td>
+  </tr>
+</table> 
+<script type="text/javascript">
+  // set date picker
+  $(function() {
+      $("#date").datepicker();
+  });
+
+  // set header
+  $('#evaluated_name').change( function(){
+    $('#show-evaluated-name').text( $(this).val() );
+  });
+  $('#evaluator_name').change( function(){
+    $('#show-evaluator-name').text( $(this).val() );
+  });
+</script>
 
   </div>
   <div id="tabs-3">
-    <input type="textfield" class="sorteo" /><br/>
-<input type="textfield" class="sorteo" /><br/>
-<input type="textfield" class="sorteo" /><br/>
-
+    <table border="1">
+  <tr>
+    <th></th>
+    <th>Nro. de ásana</th>
+    <th>Nombre del ásana</th>
+    <th>
+      Demostró <br />
+      conocimiento
+    </th>
+    <th>
+      Calidad <br />
+      de ejecución
+    </th>
+    <th>Suma de puntaje</th>
+  </tr>
+    <tr>
+      <td>1.</td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_1" size="2"/></td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_name_1"/></td>
+      <td><select id="dem_con_1"  class="save-this-data sorteo update-sorteo_avg" id="dem_con_1"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><select id="ejec_1"  class="save-this-data sorteo update-sorteo_avg" id="ejec_1"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><input type="hidden"  class="save-this-data sorteo sum-on-sorteo_avg" id="asana_tot_1" value="1" /><span id="show-asana-1-tot" class="sorteo"></span></td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_2" size="2"/></td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_name_2"/></td>
+      <td><select id="dem_con_2"  class="save-this-data sorteo update-sorteo_avg" id="dem_con_2"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><select id="ejec_2"  class="save-this-data sorteo update-sorteo_avg" id="ejec_2"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><input type="hidden"  class="save-this-data sorteo sum-on-sorteo_avg" id="asana_tot_2" value="2" /><span id="show-asana-2-tot" class="sorteo"></span></td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_3" size="2"/></td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_name_3"/></td>
+      <td><select id="dem_con_3"  class="save-this-data sorteo update-sorteo_avg" id="dem_con_3"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><select id="ejec_3"  class="save-this-data sorteo update-sorteo_avg" id="ejec_3"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><input type="hidden"  class="save-this-data sorteo sum-on-sorteo_avg" id="asana_tot_3" value="3" /><span id="show-asana-3-tot" class="sorteo"></span></td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_4" size="2"/></td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_name_4"/></td>
+      <td><select id="dem_con_4"  class="save-this-data sorteo update-sorteo_avg" id="dem_con_4"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><select id="ejec_4"  class="save-this-data sorteo update-sorteo_avg" id="ejec_4"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><input type="hidden"  class="save-this-data sorteo sum-on-sorteo_avg" id="asana_tot_4" value="4" /><span id="show-asana-4-tot" class="sorteo"></span></td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_5" size="2"/></td>
+      <td><input type="textfield"  class="save-this-data sorteo" id="asana_name_5"/></td>
+      <td><select id="dem_con_5"  class="save-this-data sorteo update-sorteo_avg" id="dem_con_5"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><select id="ejec_5"  class="save-this-data sorteo update-sorteo_avg" id="ejec_5"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+      <td><input type="hidden"  class="save-this-data sorteo sum-on-sorteo_avg" id="asana_tot_5" value="5" /><span id="show-asana-5-tot" class="sorteo"></span></td>
+    </tr>
+  <tr>
+    <td colspan="4"></td>
+    <td>Promedio:</td>
+    <td><input type="hidden"  class="save-this-data sorteo" id="sorteo_avg" value="" /><span id="show-sorteo_avg" class="sorteo"></span></td>
+  </tr>
+</table>
   </div>
   <div id="tabs-4">
     en construcción
@@ -135,57 +269,21 @@ Monitor name: <input class="save-this-data" id="monitor_name" type="textfield"/>
     en construcción
   </div>
   <div id="tabs-6">
-    en construcción
+    en construcci
   </div>
   <div id="tabs-7">
     en construcción
   </div>
   <div id="tabs-8">
-   en construcción
+    asdfasassddfsdsd    
   </div>
 </div>
 <div id="countdown">
   put countdown here
 </div>
 <a class="button" id="print-to-pdf" href="#">Print 2 PDF</a>
-
-  <script type="text/javascript">
-    // Load data from cookie
-    $('.save-this-data').each( function () {
-      $(this).val( $.cookie("eev:"+$(this).attr('id')) );
-    });
-
-    // Always keep information saved on cookies.
-    $('.save-this-data').change( function() {
-      cookie_name = "eev:"+$(this).attr('id');
-      cookie_value = $(this).val();
-      // cookie expires in one month
-      $.cookie(cookie_name, cookie_value,{ expires: 31 });
-    });
-
-    // pdf printer
-    $('#print-to-pdf').click( function() {
-
-      var doc = new jsPDF();
-      doc.setFontSize(22);
-      doc.text(20, 20, 'Exámen ante la Federación');
-      doc.setFontSize(16);
-      doc.text(20, 30, 'Evaluado: ' + $('#student_name').val() );
-      doc.text(20, 40, 'Monitor: ' + $('#monitor_name').val() );
-
-      doc.addPage();
-      doc.setFontSize(22);
-      doc.text(20, 20, 'Sorteo');
-      doc.setFontSize(16);
-
-      points_apart = 10;
-      $('.sorteo').each( function() {
-        doc.text(20, 20 + points_apart, $(this).val() );
-        points_apart = points_apart + 10;
-      });
-
-      doc.output('datauri');
-    });
-  </script>
+  <script type="text/javascript" src="js/eevivo.js"></script>
+  <script type="text/javascript" src="js/print2pdf.js"></script>
+  <script type="text/javascript" src="js/sorteo.js"></script>
 </body>
 </html>

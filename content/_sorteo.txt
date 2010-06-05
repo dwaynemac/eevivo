@@ -1,6 +1,35 @@
 ---
 filter: erb
 ---
-<input type="textfield" class="sorteo" /><br/>
-<input type="textfield" class="sorteo" /><br/>
-<input type="textfield" class="sorteo" /><br/>
+<%- @group_class = "sorteo" -%>
+<table border="1">
+  <tr>
+    <th></th>
+    <th>Nro. de ásana</th>
+    <th>Nombre del ásana</th>
+    <th>
+      Demostró <br />
+      conocimiento
+    </th>
+    <th>
+      Calidad <br />
+      de ejecución
+    </th>
+    <th>Suma de puntaje</th>
+  </tr>
+  <%- [1,2,3,4,5].each do |i| -%>
+    <tr>
+      <td><%= i %>.</td>
+      <td><%= txt("asana_#{i}", {:class => @group_class, :size => 2}) %></td>
+      <td><%= txt("asana_name_#{i}", :class => @group_class) %></td>
+      <td><%= int_select("dem_con_#{i}",0,5,:class => "#{@group_class} update-sorteo_avg") %></td>
+      <td><%= int_select("ejec_#{i}",0,5,:class => "#{@group_class} update-sorteo_avg") %></td>
+      <td><%= hdn("asana_tot_#{i}",i,:class => "#{@group_class} sum-on-sorteo_avg") %><span id="show-asana-<%= i %>-tot" class="<%= @group_class %>"></span></td>
+    </tr>
+  <%- end -%>
+  <tr>
+    <td colspan="4"></td>
+    <td>Promedio:</td>
+    <td><%= hdn("sorteo_avg",nil,:class => @group_class) %><span id="show-sorteo_avg" class="<%= @group_class %>"></span></td>
+  </tr>
+</table>

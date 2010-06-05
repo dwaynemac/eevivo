@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/content/index.txt" line="46" />
+  </component>
   <component name="ChangeListManager" verified="true">
-    <list default="true" readonly="true" id="c1d3fab5-64ec-4a8f-bc31-5689848287c6" name="Default" comment="" />
+    <list default="true" readonly="true" id="c1d3fab5-64ec-4a8f-bc31-5689848287c6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/index.html" afterPath="$PROJECT_DIR$/output/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/default.txt" afterPath="$PROJECT_DIR$/layouts/default.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/_general-data.txt" afterPath="$PROJECT_DIR$/content/_general-data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/index.txt" afterPath="$PROJECT_DIR$/content/index.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/_first-tab.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/_instructions.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/_sorteo.txt" afterPath="$PROJECT_DIR$/content/_sorteo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="eevivo.iws" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,46 +37,28 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="_sorteo.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/content/_sorteo.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="14" selection-start="465" selection-end="465" vertical-scroll-proportion="0.5660377">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/index.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
+            <state line="46" column="20" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_sorteo.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/_sorteo.txt">
+      <file leaf-file-name="my_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/my_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="46" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_general-data.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/_general-data.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="43" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layouts/default.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="0" selection-start="3480" selection-end="3480" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="27" selection-start="116" selection-end="116" vertical-scroll-proportion="0.15050167">
+            <state line="43" column="0" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -79,17 +74,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/output/index.html" />
-        <option value="$PROJECT_DIR$/content/_first-tab.txt" />
-        <option value="$PROJECT_DIR$/content/css/jquery.countdown.css" />
-        <option value="$PROJECT_DIR$/content/_build-pdf.txt" />
         <option value="$PROJECT_DIR$/content/js/jquery.cookie.js" />
-        <option value="$PROJECT_DIR$/content/_general-data.txt" />
         <option value="$PROJECT_DIR$/content/css/button.css" />
-        <option value="$PROJECT_DIR$/content/_sorteo.txt" />
-        <option value="$PROJECT_DIR$/content/index.txt" />
-        <option value="$PROJECT_DIR$/layouts/default.txt" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/lib/my_helpers.rb" />
+        <option value="$PROJECT_DIR$/output/index.html" />
+        <option value="$PROJECT_DIR$/content/_general-data.txt" />
+        <option value="$PROJECT_DIR$/content/js/print2pdf.js" />
+        <option value="$PROJECT_DIR$/layouts/default.txt" />
+        <option value="$PROJECT_DIR$/content/_instructions.txt" />
+        <option value="$PROJECT_DIR$/content/js/eevivo.js" />
+        <option value="$PROJECT_DIR$/content/js/eevivo.js.txt" />
+        <option value="$PROJECT_DIR$/output/js/eevivo.js" />
+        <option value="$PROJECT_DIR$/content/js/eevivo.txt" />
+        <option value="$PROJECT_DIR$/lib/my_helper.rb" />
+        <option value="$PROJECT_DIR$/content/index.txt" />
+        <option value="$PROJECT_DIR$/content/_sorteo.txt" />
       </list>
     </option>
   </component>
@@ -119,7 +119,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,14 +147,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eevivo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eevivo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eevivo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eevivo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eevivo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eevivo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
+      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="editing.templates" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda">
@@ -203,14 +255,14 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14593302" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23365231" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -247,101 +299,102 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/breadcrumbs.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="42" selection-start="394" selection-end="394" vertical-scroll-proportion="0.37625417" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/_partial.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/page.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/_first-tab.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="22" selection-end="22" vertical-scroll-proportion="0.077186964">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/js/jspdf/examples/jaxer.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="70" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/js/jspdf/examples/basic.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="27" selection-start="774" selection-end="4254" vertical-scroll-proportion="-13.909091">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="32" selection-start="1612" selection-end="1612" vertical-scroll-proportion="1.2834225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/js/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="41" selection-start="3782" selection-end="3782" vertical-scroll-proportion="0.64882946">
-          <folding />
-        </state>
+        <state line="83" column="41" selection-start="3782" selection-end="3782" vertical-scroll-proportion="0.64882946" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/css/button.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/_build-pdf.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="19" selection-start="3232" selection-end="3232" vertical-scroll-proportion="0.5986622">
-          <folding />
-        </state>
+        <state line="132" column="19" selection-start="3232" selection-end="3232" vertical-scroll-proportion="0.5986622" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/index.txt">
+    <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="27" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/_sorteo.txt">
+    <entry file="file://$PROJECT_DIR$/lib/breadcrumbs.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
+        <state line="26" column="5" selection-start="593" selection-end="593" vertical-scroll-proportion="0.65217394" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/js/print2pdf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="3" selection-start="605" selection-end="605" vertical-scroll-proportion="0.6270903">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/_general-data.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="43" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
+        <state line="36" column="5" selection-start="830" selection-end="845" vertical-scroll-proportion="0.67391306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/_instructions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.2572899">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/layouts/default.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="0" selection-start="3480" selection-end="3480" vertical-scroll-proportion="0.0">
+        <state line="105" column="50" selection-start="2660" selection-end="2660" vertical-scroll-proportion="0.84949833">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/output/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="116" selection-end="116" vertical-scroll-proportion="0.15050167">
+        <state line="6" column="23" selection-start="289" selection-end="289" vertical-scroll-proportion="0.16042781" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/js/eevivo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="734" selection-end="734" vertical-scroll-proportion="0.025083613">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/js/jquery.countdown-sk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/js/eevivo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="9" selection-start="1905" selection-end="1905" vertical-scroll-proportion="0.89966553">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/my_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/index.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="20" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/_sorteo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="14" selection-start="465" selection-end="465" vertical-scroll-proportion="0.5660377">
           <folding />
         </state>
       </provider>

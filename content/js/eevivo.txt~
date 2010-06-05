@@ -1,0 +1,61 @@
+---
+filter: erb
+extension: js
+layout: nil
+---
+
+// INITIALIZE FIELDS
+// from cookie
+$('.save-this-data').each( function () {
+  file_name = "eev";
+  $(this).val( $.cookie(file_name+":"+$(this).attr('id')) );
+});
+// from fields them selfs
+$('#show-evaluated-name').text( $('#evaluated_name').val() );
+$('#show-evaluator-name').text( $('#evaluator_name').val() );
+
+// SET AUTO-SAVE
+$('.save-this-data').change( function() {
+  cookie_name = "eev:"+$(this).attr('id');
+  cookie_value = $(this).val();
+  // cookie expires in one month
+  $.cookie(cookie_name, cookie_value,{ expires: 31 });
+});
+
+// SORTEO
+// SUM
+<%- [1,2,3,4,5].each do |i| -%>
+  // initialize on load
+  new_val = parseInt($('#dem_con_<%= i %>').val()) + parseInt($('#ejec_<%= i %>').val())
+  $('#show-asana-<%= i %>-tot').text( new_val )
+  $('#asana_tot_<%= i %>').val( new_val )
+
+  // set onChange updates
+  $('#dem_con_<%= i %>').change( function() {
+    new_val = parseInt($(this).val()) + parseInt($('#ejec_<%= i %>').val())
+    $('#show-asana-<%= i %>-tot').text( new_val )
+    $('#asana_tot_<%= i %>').val( new_val )
+  });
+
+  $('#ejec_<%= i %>').change( function() {
+    new_val = parseInt($(this).val()) + parseInt($('#dem_con_<%= i %>').val())
+    $('#show-asana-<%= i %>-tot').text( new_val )
+    $('#asana_tot_<%= i %>').val( new_val )
+  });
+<%- end -%>
+
+// AVERAGE
+function calculateSorteoAvg() {
+  sum = 0.0
+  $('.sum-on-sorteo_avg').each( function(){ sum += parseInt($(this).val()); });
+  return sum/$('.sum-on-sorteo_avg').length
+}
+
+// initalize on load
+$('#sorteo_avg').val( calculateSorteoAvg() );
+$('#show-sorteo_avg').text( calculateSorteoAvg() );
+
+$('.update-sorteo_avg').change( function() {
+  $('#sorteo_avg').val( calculateSorteoAvg() );
+  $('#show-sorteo_avg').text( calculateSorteoAvg() );
+});

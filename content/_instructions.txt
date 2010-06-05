@@ -1,0 +1,25 @@
+---
+filter: erb
+---
+<h1>Instrucciones para la Mesa Examinadora</h1>
+<p>
+    La mesa examinadora será responsable de calificar y realizar los promedios para obtener la nota final de cada examinado.<br />
+    Efectuada la calificación final, el presidente de mesa actuante revisará los promedios finales y entregará los resultados, debidamente ordenados, foliados y abrochados, al Presidente de la Federación que sea sede de las pruebas, quedando armado un legajo por cada examinado.
+</p>
+<h2>Los promedios se obtendrán de la siguiente forma:</h2>
+<p>
+    Nota de la Prueba escrita <br />
+    Nota obtenida por sorteo de ásanas. <br />
+    Nota obtenida por coreografía de Swásthya Yôga. <br />
+    Promedio de ambas: <br />
+    Nota obtenida por prueba de clase. <br />
+    Promedia con la anterior. <br />
+</p>
+<p> 
+    Cada integrante de la mesa examinadora realizará el procedimiento indicado precedentemente para obtener su calificación.<br />
+    Luego, los tres integrantes de la mesa realizarán el promedio final entre las tres calificaciones llegando a la nota definitiva.<br />
+    Los resultados no se brindarán en el momento del examen, siendo responsabilidad de la Federación comunicarlo en un plazo de 15 días hábiles posteriores.<br />
+</p>
+<p>     
+    Ser integrante de la mesa examinadora implica aceptar una gran responsabilidad y debe ser ejercida con cuidado, cariño y seriedad. El futuro del Swásthya Yôga está directamente vinculado con esta tarea.
+</p>
