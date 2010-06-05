@@ -106,7 +106,7 @@
     <p>
       <!-- <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span> -->
       <strong>Alumno:</strong> <span id="show-evaluated-name">-</span>
-      <strong>Evaluador:</strong> <span id="show-evaluator-name">-</span>
+      <strong>Evaluador:</strong> <span class="show-evaluator-name">-</span>
     </p>
 </div>
 <div id="tabs">
@@ -184,7 +184,10 @@
   </tr>
   <tr>
     <td>Evaluador:</td>
-    <td><input type="textfield"  class="save-this-data general-data" id="evaluator_name"/></td>
+    <td>
+      <input type="textfield"  class="save-this-data general-data" id="evaluator_name"/>
+      <input type="checkbox" value="1" id="evaluator_is_president" />presidente de mesa
+    </td>
   </tr>
   <tr>
     <td>Fecha:</td>
@@ -202,7 +205,10 @@
     $('#show-evaluated-name').text( $(this).val() );
   });
   $('#evaluator_name').change( function(){
-    $('#show-evaluator-name').text( $(this).val() );
+    value = $(this).val();
+    $('.show-evaluator-name').each(function(){
+      $(this).text( value );
+    });
   });
 </script>
 
@@ -331,7 +337,7 @@
 	<tr>
 		<th>Aspectos a evaluar</th><th>Puntaje</th>
 	</tr>
-		<tr>
+      <tr>
           		<td>¿La entrada marcó presencia? ¿El inicio de la coreografía fue bien definido, sincronizado con la música?</td>
           		<td><select id="coreo_1"  class="save-this-data sum-in-coreo_total" id="coreo_1"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
           	</tr><tr>
@@ -424,12 +430,17 @@
 		return total;
 	};
 
+  function notaCoreo(){
+    return totalCoreo()*100/100;
+  }
+
 	$('.sum-in-coreo_total').change(function(){
 		$('#show_coreo_total').text( totalCoreo() );
 		$('#coreo_total').val( totalCoreo() );
 		saveObject($('#coreo_total'));
 	});
 </script>
+
   </div>
   <div id="tabs-5">
     <table border="1">
@@ -770,7 +781,47 @@
 
   </div>
   <div id="tabs-8">
-    asdfasassddfsdsd    
+    <table border="1">
+  <tr>
+    <th>Evaluador</th>
+    <th>Prueba Teórica</th>
+    <th>Prueba Práctica</th>
+    <th>Prueba de Clase</th>
+    <th>Disertación</th>
+    <th>Nota total</th>
+  </tr>
+  <tr>
+    <td><span class="show-evaluator-name"></span></td>
+    <td>teo</td>
+    <td><span id="show_coreo_grade"></span></td>
+    <td>cla</td>
+    <td>dise</td>
+    <td>total</td>
+  </tr>
+    <tr>
+      <td><input type="textfield"  class="save-this-data " id="name_evaluator_0"/></td>
+      <td><input type="textfield"  class="save-this-data " id="teoria_evaluator_0"/></td>
+      <td><input type="textfield"  class="save-this-data " id="practica_evaluator_0"/></td>
+      <td><input type="textfield"  class="save-this-data " id="clase_evaluator_0"/></td>
+      <td><input type="textfield"  class="save-this-data " id="disertacion_evaluator_0"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="textfield"  class="save-this-data " id="name_evaluator_1"/></td>
+      <td><input type="textfield"  class="save-this-data " id="teoria_evaluator_1"/></td>
+      <td><input type="textfield"  class="save-this-data " id="practica_evaluator_1"/></td>
+      <td><input type="textfield"  class="save-this-data " id="clase_evaluator_1"/></td>
+      <td><input type="textfield"  class="save-this-data " id="disertacion_evaluator_1"/></td>
+      <td></td>
+    </tr>
+</table>
+<script type="text/javascript">
+  $("#show_coreo_grade").text(notaCoreo());
+  $('.sum-in-coreo_total').change(function(){
+		$("#show_coreo_grade").text(notaCoreo());
+	});
+</script>
+    
   </div>
 </div>
 <div id="countdown">

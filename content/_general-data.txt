@@ -20,7 +20,10 @@ filter: erb
   </tr>
   <tr>
     <td>Evaluador:</td>
-    <td><%= txt("evaluator_name", :class => "general-data") %></td>
+    <td>
+      <%= txt("evaluator_name", :class => "general-data") %>
+      <input type="checkbox" value="1" id="evaluator_is_president" />presidente de mesa
+    </td>
   </tr>
   <tr>
     <td>Fecha:</td>
@@ -38,6 +41,9 @@ filter: erb
     $('#show-evaluated-name').text( $(this).val() );
   });
   $('#evaluator_name').change( function(){
-    $('#show-evaluator-name').text( $(this).val() );
+    value = $(this).val();
+    $('.show-evaluator-name').each(function(){
+      $(this).text( value );
+    });
   });
 </script>

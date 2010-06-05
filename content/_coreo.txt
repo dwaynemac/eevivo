@@ -6,34 +6,36 @@ filter: erb
 		<th>Aspectos a evaluar</th><th>Puntaje</th>
 	</tr>
 	<%- i = 0 -%>
-		<%=
-          [
-          "¿La entrada marcó presencia? ¿El inicio de la coreografía fue bien definido, sincronizado con la música?",
-          "¿Se presentó con buena apariencia personal? ¿Se esmeró en la belleza de la ropa, el cuidado del cabello, etc.?",
-          "¿La práctica de los ásanas siguió el criterio de balanceamiento?",
-          "¿El ángulo didáctico era correcto?",
-          "¿Hubo creatividad en los pasajes? ¿Creó movimientos nuevos?",
-          "¿El movimiento de las manos y de los brazos no fue aleatorio?<br/> ¿Utilizó adecuadamente los mudrás de nuestro linaje, sin repetirlos y excluyendo los que están estereotipados",
-          "¿Demostró firmeza en los ásanas musculares? ¿Hubo temblor?",
-          "¿Demostró una buena elongación muscular?",
-          "¿Demostró una buena flexibilidad articular?",
-          "¿Dudó en algún pasaje o en algún ásana?",
-          "¿Se desequilibró en algún momento?",
-          "¿Utilizó sólo ásanas que ya domina totalmente?",
-          "¿Excluyó ásanas antiestéticos o estereotipados, como padmásanas, halásanas, sarvángásanas y sírshásanas?",
-          "¿La respiración fue coordinada con los movimientos? ¿Quedó sin aliento durante la presentación?",
-          "¿Mantuvo la conciencia en todas las partes del cuerpo, principalmente pies y manos?",
-          "¿La música escogida estaba en consonancia con los movimientos coreográficos?",
-          "¿Utilizó música instrumental, sin letra? ¿La música fue creada especialmente?",
-          "¿La calidad de la grabación era buena? ¿La música fue vibrante, dinámica y arrebatadora?",
-          "¿Explotó bien la sonrisa y la mirada?",
-          "¿La expresión corporal y fisonómica denotaron seguridad?",
-          "¿Transmitió energía, poder, fuerza e imponencia, pero sin antipatía o arrogancia?",
-          "¿Realizó la coreografía en el tiempo establecido, entre tres y cinco minutos?",
-          "¿La finalización fue bien definida, marcante y coincidente con la música?",
-          "¿Agradeció al público al final? ¿Hizo una buena salida?",
-          "<strong>¿Consiguió incentivar al público a disfrutar y a querer practicar SwáSthya Yôga?</strong>"
-          ].map do |text|
+	<%- 
+      items=[
+      "¿La entrada marcó presencia? ¿El inicio de la coreografía fue bien definido, sincronizado con la música?",
+      "¿Se presentó con buena apariencia personal? ¿Se esmeró en la belleza de la ropa, el cuidado del cabello, etc.?",
+      "¿La práctica de los ásanas siguió el criterio de balanceamiento?",
+      "¿El ángulo didáctico era correcto?",
+      "¿Hubo creatividad en los pasajes? ¿Creó movimientos nuevos?",
+      "¿El movimiento de las manos y de los brazos no fue aleatorio?<br/> ¿Utilizó adecuadamente los mudrás de nuestro linaje, sin repetirlos y excluyendo los que están estereotipados",
+      "¿Demostró firmeza en los ásanas musculares? ¿Hubo temblor?",
+      "¿Demostró una buena elongación muscular?",
+      "¿Demostró una buena flexibilidad articular?",
+      "¿Dudó en algún pasaje o en algún ásana?",
+      "¿Se desequilibró en algún momento?",
+      "¿Utilizó sólo ásanas que ya domina totalmente?",
+      "¿Excluyó ásanas antiestéticos o estereotipados, como padmásanas, halásanas, sarvángásanas y sírshásanas?",
+      "¿La respiración fue coordinada con los movimientos? ¿Quedó sin aliento durante la presentación?",
+      "¿Mantuvo la conciencia en todas las partes del cuerpo, principalmente pies y manos?",
+      "¿La música escogida estaba en consonancia con los movimientos coreográficos?",
+      "¿Utilizó música instrumental, sin letra? ¿La música fue creada especialmente?",
+      "¿La calidad de la grabación era buena? ¿La música fue vibrante, dinámica y arrebatadora?",
+      "¿Explotó bien la sonrisa y la mirada?",
+      "¿La expresión corporal y fisonómica denotaron seguridad?",
+      "¿Transmitió energía, poder, fuerza e imponencia, pero sin antipatía o arrogancia?",
+      "¿Realizó la coreografía en el tiempo establecido, entre tres y cinco minutos?",
+      "¿La finalización fue bien definida, marcante y coincidente con la música?",
+      "¿Agradeció al público al final? ¿Hizo una buena salida?",
+      "<strong>¿Consiguió incentivar al público a disfrutar y a querer practicar SwáSthya Yôga?</strong>"
+      ]
+  -%>
+      <%= items.map do |text|
           	"<tr>
           		<td>#{text}</td>
           		<td>#{int_select("coreo_#{i+=1}",0,4,:size => 1, :class => "sum-in-coreo_total")}</td>
@@ -56,6 +58,10 @@ filter: erb
 		$('.sum-in-coreo_total').each(function(){total += parseInt($(this).val())});
 		return total;
 	};
+
+  function notaCoreo(){
+    return totalCoreo()*100/<%= items.size*4 %>;
+  }
 
 	$('.sum-in-coreo_total').change(function(){
 		$('#show_coreo_total').text( totalCoreo() );

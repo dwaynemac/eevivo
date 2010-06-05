@@ -8,7 +8,7 @@ filter:
     <p>
       <!-- <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span> -->
       <strong>Alumno:</strong> <span id="show-evaluated-name">-</span>
-      <strong>Evaluador:</strong> <span id="show-evaluator-name">-</span>
+      <strong>Evaluador:</strong> <span class="show-evaluator-name">-</span>
     </p>
 </div>
 <div id="tabs">
@@ -44,7 +44,7 @@ filter:
     <%= render(:partial => "disertacion") %>
   </div>
   <div id="tabs-8">
-    asdfasassddfsdsd    
+    <%= render(:partial => "results") %>    
   </div>
 </div>
 <div id="countdown">

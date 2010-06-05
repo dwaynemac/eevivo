@@ -15,7 +15,11 @@ function initializeFields() {
 	
 	// from fields
 	$('#show-evaluated-name').text( $('#evaluated_name').val() );
-	$('#show-evaluator-name').text( $('#evaluator_name').val() );
+	$('.show-evaluator-name').text(  );
+	evaluator_name = $('#evaluator_name').val();
+  $('.show-evaluator-name').each(function(){
+    $(this).text( evaluator_name );
+  });
 	$('#show_coreo_total').text( $('#coreo_total').val() );
 	for(i=1;i<=5;i+=1){
 		var value = parseInt($('#asana_'+i).val());

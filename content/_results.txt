@@ -1,0 +1,37 @@
+---
+filter: erb
+---
+<table border="1">
+  <tr>
+    <th>Evaluador</th>
+    <th>Prueba Teórica</th>
+    <th>Prueba Práctica</th>
+    <th>Prueba de Clase</th>
+    <th>Disertación</th>
+    <th>Nota total</th>
+  </tr>
+  <tr>
+    <td><span class="show-evaluator-name"></span></td>
+    <td>teo</td>
+    <td><span id="show_coreo_grade"></span></td>
+    <td>cla</td>
+    <td>dise</td>
+    <td>total</td>
+  </tr>
+  <%- (0...2).each do |i| -%>
+    <tr>
+      <td><%= txt("name_evaluator_#{i}") %></td>
+      <td><%= txt("teoria_evaluator_#{i}") %></td>
+      <td><%= txt("practica_evaluator_#{i}") %></td>
+      <td><%= txt("clase_evaluator_#{i}") %></td>
+      <td><%= txt("disertacion_evaluator_#{i}") %></td>
+      <td></td>
+    </tr>
+  <%- end -%>
+</table>
+<script type="text/javascript">
+  $("#show_coreo_grade").text(notaCoreo());
+  $('.sum-in-coreo_total').change(function(){
+		$("#show_coreo_grade").text(notaCoreo());
+	});
+</script>
