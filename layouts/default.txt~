@@ -108,7 +108,7 @@ filter:    erb
 <body>
   <%= @content %>
   <script type="text/javascript" src="js/print2pdf.js"></script>
-  <script type="text/javascript" src="js/auto-save.js"></script>
   <script type="text/javascript" src="js/eevivo.js"></script>
+  <script type="text/javascript" src="js/auto-save.js"></script>
 </body>
 </html>

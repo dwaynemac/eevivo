@@ -20,13 +20,16 @@ module MyHelper
     options[:save] = true if options[:save].nil?
     extras << %( class="#{"save-this-data" if options[:save] } #{options[:class]}")
     extras << %( id="#{id}") unless id.nil?
-    extras << %( size="#{options[:size]}") unless options[:size].nil?
+    unless options[:size].nil?
+      options[:size] =~ /(\d*)x(\d*)/
+      extras << %( cols="#{$1}" rows="#{$2}")
+    end
 
     html = %(<textarea #{extras}>#{options[:value]}</textarea>)
     html
   end
 
-  def hdn(id, value, options = {})
+  def hdn(id, value = nil, options = {})
     extras = ""
     options[:save] = true if options[:save].nil?
     extras << %( class="#{"save-this-data" if options[:save] } #{options[:class]}")

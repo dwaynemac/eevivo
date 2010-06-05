@@ -1,34 +1,3 @@
-
-function initializeFields() {
-	// from cookie
-	$('.save-this-data').each( function () {
-	  file_name = "eev";
-	  $(this).val( $.cookie(file_name+":"+$(this).attr('id')) );
-	});
-	
-	// from fields
-	$('#show-evaluated-name').text( $('#evaluated_name').val() );
-	$('#show-evaluator-name').text( $('#evaluator_name').val() );
-	for(i=1;i<=5;i+=1){
-		var value = parseInt($('#asana_'+i).val());
-		$('#asana_name_'+i).text($(asanas).get(value));
-	}
-}
-initializeFields();
-
-function saveObject(object){
-	file_name = "eev";
-  	cookie_name = file_name+":"+$(object).attr('id');
-  	cookie_value = $(object).val();
-  	// cookie expires in one month
-  	$.cookie(cookie_name, cookie_value,{ expires: 31 });
-}
-
-// SET AUTO-SAVE
-$('.save-this-data').change( function() {
-  saveObject( $(this) );
-});
-
 // SORTEO
 // SUM
   // initialize on load

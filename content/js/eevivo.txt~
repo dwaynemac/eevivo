@@ -3,32 +3,60 @@ filter: erb
 extension: js
 layout: nil
 ---
+var store;
+
+// after DOM has loaded
+$(function() {   
+	store = new Persist.Store('eevivo');
+	initializeFields();
+	enableAutoSave();
+});
 
 function initializeFields() {
 	// from cookie
 	$('.save-this-data').each( function () {
 	  file_name = "eev";
-	  $(this).val( $.cookie(file_name+":"+$(this).attr('id')) );
+	  key = file_name+":"+$(this).attr('id');
+	  $(this).val( readFromLocalDB(key) );
 	});
 	
 	// from fields
 	$('#show-evaluated-name').text( $('#evaluated_name').val() );
 	$('#show-evaluator-name').text( $('#evaluator_name').val() );
+	$('#show_coreo_total').text( $('#coreo_total').val() );
 	for(i=1;i<=5;i+=1){
 		var value = parseInt($('#asana_'+i).val());
 		$('#asana_name_'+i).text($(asanas).get(value));
 	}
 }
-initializeFields();
+
+function saveObject(object){	
+	file_name = "eev";
+  	data_name = file_name+":"+$(object).attr('id');
+  	data_value = $(object).val();
+  	/* SWITCHING TO PERSISJS 
+  	$.cookie(data_name, data_value,{ expires: 31 }); */ 
+  	store.set(data_name,data_value);
+}
+
+function readFromLocalDB(key){
+	var ret_value;
+	/* SWITCHING TO PERSISJS 
+	 return $.cookie(key); */
+	 store.get(key,function(ok,val){
+	 	if(ok){
+	 		ret_value = val;
+	 	}
+	 });
+	 return ret_value;
+}
 
 // SET AUTO-SAVE
-$('.save-this-data').change( function() {
-  file_name = "eev";
-  cookie_name = file_name+":"+$(this).attr('id');
-  cookie_value = $(this).val();
-  // cookie expires in one month
-  $.cookie(cookie_name, cookie_value,{ expires: 31 });
-});
+function enableAutoSave() {
+	$('.save-this-data').change( function() {
+	  	saveObject( $(this) );
+	});
+}
 
 // SORTEO
 // SUM

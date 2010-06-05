@@ -1,0 +1,58 @@
+---
+filter: erb
+---
+---
+filter: erb
+---
+<div stype="float:left">
+<table border="1">
+  <tr>
+      <th>Aspectos a evaluar</th><th>Puntaje</th>
+  </tr>
+<%- i = 0 -%>
+<%=
+          [
+"¿La presentación del alumno que acaba de ingresar en la Sede fue satisfactoria y generó integración para que se sintiera bien recibido?",								
+"¿Indujo bien los ejercicios respiratorios? ¿Logró transmitir la importancia de la respiración?",								
+"¿Indujo bien las contracciones abdominales? ¿Demostró correctamente? ¿Supo valorizar la técnica?",								
+"¿Demostró y describió correctamente las técnicas orgánicas?", 								
+"¿Aplicó el ángulo didáctico? ¿Dio la clase en formato coreográfico? ¿Aplicó el criterio de balanceamiento?",								
+"¿Indujo correctamente la descontracción? ¿Priorizó la descontracción muscular?",								
+"¿Corrigió correctamente demostrando conocimiento de las técnicas?",								
+"¿Explicó que este es nuestro método introductorio y que al ingresar a SwáSthya el alumno aprenderá técnicas más avanzadas e interesantes?",								
+"¿Logró diferenciar esta práctica de una clase de SwáSthya Yôga: clima, feedback, inducción, iluminación, vocabulario, etc.?",								
+"¿Tuvo el cuidado de elegir para el examen temas musicales sin voz y que agraden a los alumnos?",								
+"¿Al finalizar la clase los alumnos quedaron motivados para seguir las próximas etapas de nuestro método?",								
+"¿Demostró competencia al enseñar los fundamentos de nuestro método?", 								
+"¿Logró transmitir con carisma la importancia de las enseñanzas para mejorar la calidad de vida?" 								
+          ].map do |text|
+          	"<tr>
+          		<td>#{text}</td>
+          		<td>#{int_select("preyoga_#{i+=1}",0,3,:size => 1, :class => "sum-in-preyoga_total")}</td>
+          	</tr>"
+          end
+		%>
+  <tr>
+      <td>Total:</td>
+      <td><%= hdn("preyoga_total")%><span id="show_preyoga_total"></span></td>
+  </tr>
+</table>
+</div>
+<p>
+  <h3>Observaciones</h3>
+  <%= txt_area("preyoga_obs",:size => "30x15")%>
+</p>
+<script type="text/javascript">
+
+	function totalPreYoga(){
+		var total = 0;
+		$('.sum-in-preyoga_total').each(function(){total += parseInt($(this).val())});
+		return total;
+	};
+
+	$('.sum-in-preyoga_total').change(function(){
+		$('#show_preyoga_total').text( totalPreYoga() );
+		$('#preyoga_total').val( totalPreYoga() );
+		saveObject($('#preyoga_total'));
+	});
+</script>

@@ -1,0 +1,74 @@
+---
+filter: erb
+---
+---
+filter: erb
+---
+---
+filter: erb
+---
+<div stype="float:left">
+<table border="1">
+  <tr>
+    <th coslpan="2">
+      Para el grado de Docente la conferencia se realiza en la Unidades y asisten solamente por los alumnos e instructores de Yôga. Para el grado de Maestro, la conferencia puede ser realizada en cualquier lugar y está dirigida al público en general.
+    </th>
+  </tr>    
+  <tr>
+      <th>Aspectos a evaluar</th><th>Puntaje</th>
+  </tr>
+<%- i = 0 -%>
+<%=
+          [
+
+"¿La elección del tema fue útil para la buena imagen del Yôga?",								
+"¿El abordaje sugirió espiritualismo o misticismo?",								
+"¿Usó el pizarrón y mostró familiaridad en el uso de la tiza?",								
+"¿Limpió el pizarrón antes de usarlo?",								
+"¿Utilizó una diagramación didáctica en el pizarrón?",								
+"¿Observó fidelidad con relación a los cuadros y esquemas originales?",								
+"¿El volumen de la voz fue adecuado?",								
+"¿La dicción e impostación de la voz fueron compatibles con el grado para el cual está rindiendo examen?",								
+"¿El español fue impecable?",								
+"¿Pronunció y aplicó el sánscrito correctamente?",								
+"¿Hubo didáctica y objetividad en la exposición?",								
+"¿Demostró pleno conocimiento del tema?",							
+"¿Se relacionó bien con el público?",								
+"¿Demostró perfecta seguridad?",								
+"¿Fue convincente?",								
+"¿Su expresión corporal fue compatible con el nivel por el que compite?",								
+"¿La fisonomía fue compatible con el nivel por el que compite?",								
+"¿El lenguaje gestual fue compatible con el nivel por el que compite?",								
+"¿La apariencia personal, cabello y ropa, sugieren un profesional del nivel por el que compite?",								
+"¿Administró bien el tiempo de la conferencia?"								
+          ].map do |text|
+          	"<tr>
+          		<td>#{text}</td>
+          		<td>#{int_select("disertacion_#{i+=1}",0,3,:size => 1, :class => "sum-in-disertacion_total")}</td>
+          	</tr>"
+          end
+		%>
+  <tr>
+      <td>Total:</td>
+      <td><%= hdn("disertacion_total")%><span id="show_disertacion_total"></span></td>
+  </tr>
+</table>
+</div>
+<p>
+  <h3>Observaciones</h3>
+  <%= txt_area("disertacion_obs",:size => "30x15")%>
+</p>
+<script type="text/javascript">
+
+	function totalDisertacion(){
+		var total = 0;
+		$('.sum-in-disertacion_total').each(function(){total += parseInt($(this).val())});
+		return total;
+	};
+
+	$('.sum-in-disertacion_total').change(function(){
+		$('#show_disertacion_total').text( totalDisertacion() );
+		$('#disertacion_total').val( totalDisertacion() );
+		saveObject($('#disertacion_total'));
+	});
+</script>

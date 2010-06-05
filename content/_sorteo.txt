@@ -2,6 +2,9 @@
 filter: erb
 ---
 <%- @group_class = "sorteo" -%>
+<p>
+	<a class="button" id="get_random_asana" href="#">Realizar sorteo</a>
+</p>
 <table border="1">
   <tr>
     <th></th>
@@ -29,15 +32,13 @@ filter: erb
   <%- end -%>
   <tr>
     <td colspan="4"></td>
-    <td>Promedio:</td>
+    <th>Promedio:</th>
     <td><%= hdn("sorteo_avg",nil,:class => @group_class) %><span id="show-sorteo_avg" class="<%= @group_class %>"></span></td>
   </tr>
 </table>
 <p>
-	<a class="button" id="get_random_asana" href="#">Realizar sorteo</a>
-</p>
-<p>
-	<%= txt_area("sorteo_obs")%>
+	<h3>Observaciones</h3>
+	<%= txt_area("sorteo_obs",:size => "78x15")%>
 </p>
 <script type="text/javascript">
 	// enable button functionality

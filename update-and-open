@@ -1,0 +1,1 @@
+touch content/index.txt && webby && firefox output/index.html 

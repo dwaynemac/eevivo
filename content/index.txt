@@ -32,16 +32,16 @@ filter:
     <%= render(:partial => "sorteo") %>
   </div>
   <div id="tabs-4">
-    en construcción
+    <%= render(:partial => "coreo") %>
   </div>
   <div id="tabs-5">
-    en construcción
+    <%= render(:partial => "yoga") %>
   </div>
   <div id="tabs-6">
-    en construcci
+    <%= render(:partial => "preyoga") %>
   </div>
   <div id="tabs-7">
-    en construcción
+    <%= render(:partial => "disertacion") %>
   </div>
   <div id="tabs-8">
     asdfasassddfsdsd    

@@ -15,6 +15,9 @@
   <script type="text/javascript" src="js/jspdf/libs/sprintf.js"></script>
   <script type="text/javascript" src="js/jspdf/jspdf.js"></script>
 
+  <!-- PersisJS -->
+  <script type="text/javascript" src="js/persist-js-0.1.0/extras/persist-all-min.js"></script>
+
   <!-- JQuery Core -->
   <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 
@@ -33,25 +36,26 @@
   <!-- JQuery Cookies plugin -->
   <script type="text/javascript" src="js/jquery.cookie.js"></script>
 
+  <!-- EEVivo  -->
+  <script type="text/javascript" src="js/sorteo.js"></script>
+
   <script type="text/javascript">
     $(function() {
-
-      // Tabs
+		// Tabs
       $('#tabs').tabs();
 
       //hover states on the static widgets
       $('#dialog_link, ul#icons li').hover(
-              function() {
-                $(this).addClass('ui-state-hover');
-              },
-              function() {
-                $(this).removeClass('ui-state-hover');
-              }
-              );
-
+	     function() {
+	       $(this).addClass('ui-state-hover');
+	     },
+	     function() {
+	       $(this).removeClass('ui-state-hover');
+	     }
+      );
     });
-
   </script>
+
   <style type="text/css">
     /*demo page css*/
     body {
@@ -204,7 +208,10 @@
 
   </div>
   <div id="tabs-3">
-    <table border="1">
+    <p>
+	<a class="button" id="get_random_asana" href="#">Realizar sorteo</a>
+</p>
+<table border="1">
   <tr>
     <th></th>
     <th>Nro. de ásana</th>
@@ -261,15 +268,13 @@
     </tr>
   <tr>
     <td colspan="4"></td>
-    <td>Promedio:</td>
+    <th>Promedio:</th>
     <td><input type="hidden"  class="save-this-data sorteo" id="sorteo_avg" value="" /><span id="show-sorteo_avg" class="sorteo"></span></td>
   </tr>
 </table>
 <p>
-	<a class="button" id="get_random_asana" href="#">Realizar sorteo</a>
-</p>
-<p>
-	<textarea  class="save-this-data " id="sorteo_obs"></textarea>
+	<h3>Observaciones</h3>
+	<textarea  class="save-this-data " id="sorteo_obs" cols="78" rows="15"></textarea>
 </p>
 <script type="text/javascript">
 	// enable button functionality
@@ -322,16 +327,447 @@
 </script>
   </div>
   <div id="tabs-4">
-    en construcción
+    <table border="1">
+	<tr>
+		<th>Aspectos a evaluar</th><th>Puntaje</th>
+	</tr>
+		<tr>
+          		<td>¿La entrada marcó presencia? ¿El inicio de la coreografía fue bien definido, sincronizado con la música?</td>
+          		<td><select id="coreo_1"  class="save-this-data sum-in-coreo_total" id="coreo_1"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Se presentó con buena apariencia personal? ¿Se esmeró en la belleza de la ropa, el cuidado del cabello, etc.?</td>
+          		<td><select id="coreo_2"  class="save-this-data sum-in-coreo_total" id="coreo_2"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿La práctica de los ásanas siguió el criterio de balanceamiento?</td>
+          		<td><select id="coreo_3"  class="save-this-data sum-in-coreo_total" id="coreo_3"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿El ángulo didáctico era correcto?</td>
+          		<td><select id="coreo_4"  class="save-this-data sum-in-coreo_total" id="coreo_4"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Hubo creatividad en los pasajes? ¿Creó movimientos nuevos?</td>
+          		<td><select id="coreo_5"  class="save-this-data sum-in-coreo_total" id="coreo_5"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿El movimiento de las manos y de los brazos no fue aleatorio?<br/> ¿Utilizó adecuadamente los mudrás de nuestro linaje, sin repetirlos y excluyendo los que están estereotipados</td>
+          		<td><select id="coreo_6"  class="save-this-data sum-in-coreo_total" id="coreo_6"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Demostró firmeza en los ásanas musculares? ¿Hubo temblor?</td>
+          		<td><select id="coreo_7"  class="save-this-data sum-in-coreo_total" id="coreo_7"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Demostró una buena elongación muscular?</td>
+          		<td><select id="coreo_8"  class="save-this-data sum-in-coreo_total" id="coreo_8"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Demostró una buena flexibilidad articular?</td>
+          		<td><select id="coreo_9"  class="save-this-data sum-in-coreo_total" id="coreo_9"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Dudó en algún pasaje o en algún ásana?</td>
+          		<td><select id="coreo_10"  class="save-this-data sum-in-coreo_total" id="coreo_10"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Se desequilibró en algún momento?</td>
+          		<td><select id="coreo_11"  class="save-this-data sum-in-coreo_total" id="coreo_11"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Utilizó sólo ásanas que ya domina totalmente?</td>
+          		<td><select id="coreo_12"  class="save-this-data sum-in-coreo_total" id="coreo_12"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Excluyó ásanas antiestéticos o estereotipados, como padmásanas, halásanas, sarvángásanas y sírshásanas?</td>
+          		<td><select id="coreo_13"  class="save-this-data sum-in-coreo_total" id="coreo_13"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿La respiración fue coordinada con los movimientos? ¿Quedó sin aliento durante la presentación?</td>
+          		<td><select id="coreo_14"  class="save-this-data sum-in-coreo_total" id="coreo_14"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Mantuvo la conciencia en todas las partes del cuerpo, principalmente pies y manos?</td>
+          		<td><select id="coreo_15"  class="save-this-data sum-in-coreo_total" id="coreo_15"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿La música escogida estaba en consonancia con los movimientos coreográficos?</td>
+          		<td><select id="coreo_16"  class="save-this-data sum-in-coreo_total" id="coreo_16"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Utilizó música instrumental, sin letra? ¿La música fue creada especialmente?</td>
+          		<td><select id="coreo_17"  class="save-this-data sum-in-coreo_total" id="coreo_17"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿La calidad de la grabación era buena? ¿La música fue vibrante, dinámica y arrebatadora?</td>
+          		<td><select id="coreo_18"  class="save-this-data sum-in-coreo_total" id="coreo_18"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Explotó bien la sonrisa y la mirada?</td>
+          		<td><select id="coreo_19"  class="save-this-data sum-in-coreo_total" id="coreo_19"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿La expresión corporal y fisonómica denotaron seguridad?</td>
+          		<td><select id="coreo_20"  class="save-this-data sum-in-coreo_total" id="coreo_20"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Transmitió energía, poder, fuerza e imponencia, pero sin antipatía o arrogancia?</td>
+          		<td><select id="coreo_21"  class="save-this-data sum-in-coreo_total" id="coreo_21"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Realizó la coreografía en el tiempo establecido, entre tres y cinco minutos?</td>
+          		<td><select id="coreo_22"  class="save-this-data sum-in-coreo_total" id="coreo_22"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿La finalización fue bien definida, marcante y coincidente con la música?</td>
+          		<td><select id="coreo_23"  class="save-this-data sum-in-coreo_total" id="coreo_23"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td>¿Agradeció al público al final? ¿Hizo una buena salida?</td>
+          		<td><select id="coreo_24"  class="save-this-data sum-in-coreo_total" id="coreo_24"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr><tr>
+          		<td><strong>¿Consiguió incentivar al público a disfrutar y a querer practicar SwáSthya Yôga?</strong></td>
+          		<td><select id="coreo_25"  class="save-this-data sum-in-coreo_total" id="coreo_25"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+          	</tr>
+		<tr>
+			<td>Total:</td>
+			<td><input type="hidden"  class="save-this-data " id="coreo_total" value="" /><span id="show_coreo_total"></span></td>
+		</tr>
+</table>
+<p>
+	<h3>Observaciones</h3>
+	<textarea  class="save-this-data " id="coreo_obs" cols="78" rows="15"></textarea>
+</p>
+<script type="text/javascript">
+
+	function totalCoreo(){
+		var total = 0;
+		$('.sum-in-coreo_total').each(function(){total += parseInt($(this).val())});
+		return total;
+	};
+
+	$('.sum-in-coreo_total').change(function(){
+		$('#show_coreo_total').text( totalCoreo() );
+		$('#coreo_total').val( totalCoreo() );
+		saveObject($('#coreo_total'));
+	});
+</script>
   </div>
   <div id="tabs-5">
-    en construcción
+    <table border="1">
+  <tr>
+      <th>Aspectos a evaluar</th><th>Puntaje</th>
+  </tr>
+<tr>
+          		<td>¿Se presentó con buena apariencia personal? ¿Se esmeró en la belleza de la ropa, cuidados del cabello, etc.?</td>
+          		<td><select id="yoga_1"  class="save-this-data sum-in-yoga_total" id="yoga_1"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿La expresión corporal y fisonómica denotan autoconfianza?</td>
+          		<td><select id="yoga_2"  class="save-this-data sum-in-yoga_total" id="yoga_2"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Dispuso a los alumnos más adelantados adelante y a los menos adelantados atrás?</td>
+          		<td><select id="yoga_3"  class="save-this-data sum-in-yoga_total" id="yoga_3"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿La presentación del nuevo compañero fue satisfactoria? ¿Resultó en integración efectiva?</td>
+          		<td><select id="yoga_4"  class="save-this-data sum-in-yoga_total" id="yoga_4"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Tuvo el cuidado de excluir del vocabulario términos apócrifos (espíritu, mente, Dios, calma, equilibrio, etc.)?</td>
+          		<td><select id="yoga_5"  class="save-this-data sum-in-yoga_total" id="yoga_5"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Mantuvo los ojos abiertos desde el inicio hasta el final de la práctica? ¿La mirada era expresiva?</td>
+          		<td><select id="yoga_6"  class="save-this-data sum-in-yoga_total" id="yoga_6"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>Apertura:<br/>
+	A. ¿Utilizó Kámala?<br/>
+	B.  ¿Utilizó una música compatible con la conexión al inconsciente?<br/>
+	C. ¿Hizo reconocer al practicante el privilegio de poder estar en la sala, recibiendo a través del instructor el conocimiento de los Maestros Ancestrales?<br/>
+	D. ¿Mencionó el nombre de nuestro Yôga y sus raíces?</td>
+          		<td><select id="yoga_7"  class="save-this-data sum-in-yoga_total" id="yoga_7"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>Mudrá: ¿consiguió hacer que los practicantes vivenciasen de hecho esa técnica?<br/>
+	A. ¿Definió correctamente el anga, conforme a nuestra tradición?<br/>
+	      1. ¿Escogió una buena música? ¿La música no estaba demasiado alta, de forma de apagar la voz del    instructor?<br/>
+	      2. ¿La música inspiró tanto al instructor como a los practicantes?<br/>
+	      3.  ¿Ella no choca con nuestras raíces?<br/>
+	B.  ¿Indujo el Shiva mudrá correctamente?<br/>
+	C.  ¿Convocó a los practicantes a conectarse con nuestras raíces preclásicas?<br/>
+	D.  ¿Indujo correctamente el prônam mudrá?<br/>
+	E. ¿Aplicó bháva al solicitar a los practicantes que deflagrasen un estado yôgi dentro de ellos?<br/></td>
+          		<td><select id="yoga_8"  class="save-this-data sum-in-yoga_total" id="yoga_8"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>Pújá: ¿usó los comandos adecuados? ¿Aplicó visualizaciones convenientes? ¿Los practicantes comprendieron?<br/>
+	A.    ¿Definió correctamente el anga conforme a nuestra tradición?<br/>			
+	B.    ¿La descripción del bhavan pújá generó un sentimiento de respeto y lealtad por la casa que lo acoge?<br/>
+	C.    ¿La aplicación de los atributos de los colores fue correcta?<br/>
+	D.    ¿La inducción al Guru pújá fue convincente?<br/>
+	E.     ¿El Sat Guru pújá, al Maestro del instructor que dicta la práctica, llevó a los practicantes a identificarse con él?<br/>
+	F.     ¿Generó gratitud y reconocimiento?<br/>
+	G.    ¿El Shiva pújá fue bien definido para no permitir interpretaciones místicas?<br/></td>
+          		<td><select id="yoga_9"  class="save-this-data sum-in-yoga_total" id="yoga_9"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>10. Mantra: ¿se hicieron mantras coherentes con nuestro linaje? ¿La melodía y el sánscrito eran correctos?</td>
+          		<td><select id="yoga_10"  class="save-this-data sum-in-yoga_total" id="yoga_10"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>11. Pránáyáma: ¿enseñó técnicas correctas? ¿Consiguió tornar la práctica interesante y agradable?</td>
+          		<td><select id="yoga_11"  class="save-this-data sum-in-yoga_total" id="yoga_11"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>12. Kriyá: ¿los practicantes comprendieron lo que es un kriyá? ¿Lo ejecutaron correctamente?</td>
+          		<td><select id="yoga_12"  class="save-this-data sum-in-yoga_total" id="yoga_12"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>13. Ásana: ¿se hicieron ejercicios estéticos? ¿Los pasajes fueron bien explorados?</td>
+          		<td><select id="yoga_13"  class="save-this-data sum-in-yoga_total" id="yoga_13"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>14. Yôganidrá: ¿se aplicaron las cuatro partes? ¿Se evitaron sugestiones contraproducentes?</td>
+          		<td><select id="yoga_14"  class="save-this-data sum-in-yoga_total" id="yoga_14"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>15. Samyama: ¿la inducción fue competente para enseñar la concentración, meditación, etc.?</td>
+          		<td><select id="yoga_15"  class="save-this-data sum-in-yoga_total" id="yoga_15"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>16. ¿Introdujo bien cada anga?<br/>				
+	A.    Informó nº de orden;<br/>			
+	B.    nombre en sánscrito;<br/> 			
+	C.    traducción literal;<br/>			
+	D.    definición de cada anga.</td>
+          		<td><select id="yoga_16"  class="save-this-data sum-in-yoga_total" id="yoga_16"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>17. Locución:<br/>				
+	A.    ¿Fue buena la altura de la voz?<br/>			
+	B.    ¿timbre?<br/>			
+	C.    ¿dicción?<br/>			
+	D.    ¿español?<br/>			
+	E.    ¿aplicó una modulación de voz diferente para cada anga?</td>
+          		<td><select id="yoga_17"  class="save-this-data sum-in-yoga_total" id="yoga_17"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>18. ¿Pronunció y aplicó el sánscrito correctamente, de acuerdo con el CD Sánscrito. Entrenamiento de pronunciación?</td>
+          		<td><select id="yoga_18"  class="save-this-data sum-in-yoga_total" id="yoga_18"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>19. ¿Utilizó la descripción adecuada para cada técnica transmitida?</td>
+          		<td><select id="yoga_19"  class="save-this-data sum-in-yoga_total" id="yoga_19"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>20. ¿Hizo demostraciones convincentes, y en ángulo didáctico?</td>
+          		<td><select id="yoga_20"  class="save-this-data sum-in-yoga_total" id="yoga_20"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>21. ¿Corrigió a los que erraron? ¿Y ellos comprendieron la corrección?</td>
+          		<td><select id="yoga_21"  class="save-this-data sum-in-yoga_total" id="yoga_21"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>22. ¿Mantuvo el liderazgo sobre el grupo? ¿Pero sin autoritarismo?</td>
+          		<td><select id="yoga_22"  class="save-this-data sum-in-yoga_total" id="yoga_22"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>23. ¿Hubo vacíos de silencio injustificables?<br/>				
+	A.    ¿En algún momento la clase se puso pesada?</td>
+          		<td><select id="yoga_23"  class="save-this-data sum-in-yoga_total" id="yoga_23"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>24. ¿Introdujo teoría?<br/>				
+	A.    ¿Citó las reglas generales?<br/> 			
+	B.    ¿Mencionó las características principales del SwáSthya Yôga?<br/>			
+	C.    ¿El alumno quedó bien informado sobre nuestro método?</td>
+          		<td><select id="yoga_24"  class="save-this-data sum-in-yoga_total" id="yoga_24"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>25. ¿Un practicante antiguo aprendió algo nuevo? ¿Habrá quedado satisfecho y encontrado que valió el precio que pagó?</td>
+          		<td><select id="yoga_25"  class="save-this-data sum-in-yoga_total" id="yoga_25"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>26. ¿Ofreció alternativas más adelantadas o menos, conforme el caso? ¿Adaptó la instrucción a cada practicante?</td>
+          		<td><select id="yoga_26"  class="save-this-data sum-in-yoga_total" id="yoga_26"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>27. ¿Dio la clase con formato de coreografía? ¿Los practicantes comprendieron y fueron cautivados por ese concepto?</td>
+          		<td><select id="yoga_27"  class="save-this-data sum-in-yoga_total" id="yoga_27"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>28. ¿Confirió un minuto de práctica libre en forma de coreografía, al final del sexto anga, después de las invertidas?</td>
+          		<td><select id="yoga_28"  class="save-this-data sum-in-yoga_total" id="yoga_28"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>29. ¿Usó músicas adecuadas? ¿La grabación era de buena calidad? ¿La reproducción estaba en el inicio?</td>
+          		<td><select id="yoga_29"  class="save-this-data sum-in-yoga_total" id="yoga_29"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>30. ¿Dio el tiempo justo de práctica? ¿La banca no tuvo que avisarle que terminó el tiempo?</td>
+          		<td><select id="yoga_30"  class="save-this-data sum-in-yoga_total" id="yoga_30"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>31. ¿Hizo una buena apertura y buen cierre de la clase?</td>
+          		<td><select id="yoga_31"  class="save-this-data sum-in-yoga_total" id="yoga_31"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>32. ¿Hizo una pregunta a un alumno después del cierre? ¿La pregunta fue inteligente, útil y educativa?</td>
+          		<td><select id="yoga_32"  class="save-this-data sum-in-yoga_total" id="yoga_32"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>33. ¿Dio un aviso antes de despedir al grupo? ¿Eso incrementó la integración?</td>
+          		<td><select id="yoga_33"  class="save-this-data sum-in-yoga_total" id="yoga_33"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>34. ¿Oyó en silencio y prestando atención las críticas de los examinadores? ¿Demostró sentido de disciplina y respeto?</td>
+          		<td><select id="yoga_34"  class="save-this-data sum-in-yoga_total" id="yoga_34"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>35. ¿Tiene comportamiento educado y afectuoso con colegas e instructores? ¿Merece formar parte de nuestra familia?</td>
+          		<td><select id="yoga_35"  class="save-this-data sum-in-yoga_total" id="yoga_35"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr>
+  <tr>
+      <td>Total:</td>
+      <td><input type="hidden"  class="save-this-data " id="yoga_total" value="" /><span id="show_yoga_total"></span></td>
+  </tr>
+</table>
+<p>
+  <h3>Observaciones</h3>
+  <textarea  class="save-this-data " id="yoga_obs" cols="30" rows="15"></textarea>
+</p>
+<script type="text/javascript">
+
+	function totalYoga(){
+		var total = 0;
+		$('.sum-in-yoga_total').each(function(){total += parseInt($(this).val())});
+		return total;
+	};
+
+	$('.sum-in-yoga_total').change(function(){
+		$('#show_yoga_total').text( totalYoga() );
+		$('#yoga_total').val( totalYoga() );
+		saveObject($('#yoga_total'));
+	});
+</script>
+
   </div>
   <div id="tabs-6">
-    en construcci
+    <div stype="float:left">
+<table border="1">
+  <tr>
+      <th>Aspectos a evaluar</th><th>Puntaje</th>
+  </tr>
+<tr>
+          		<td>¿La presentación del alumno que acaba de ingresar en la Sede fue satisfactoria y generó integración para que se sintiera bien recibido?</td>
+          		<td><select id="preyoga_1"  class="save-this-data sum-in-preyoga_total" id="preyoga_1"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Indujo bien los ejercicios respiratorios? ¿Logró transmitir la importancia de la respiración?</td>
+          		<td><select id="preyoga_2"  class="save-this-data sum-in-preyoga_total" id="preyoga_2"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Indujo bien las contracciones abdominales? ¿Demostró correctamente? ¿Supo valorizar la técnica?</td>
+          		<td><select id="preyoga_3"  class="save-this-data sum-in-preyoga_total" id="preyoga_3"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Demostró y describió correctamente las técnicas orgánicas?</td>
+          		<td><select id="preyoga_4"  class="save-this-data sum-in-preyoga_total" id="preyoga_4"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Aplicó el ángulo didáctico? ¿Dio la clase en formato coreográfico? ¿Aplicó el criterio de balanceamiento?</td>
+          		<td><select id="preyoga_5"  class="save-this-data sum-in-preyoga_total" id="preyoga_5"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Indujo correctamente la descontracción? ¿Priorizó la descontracción muscular?</td>
+          		<td><select id="preyoga_6"  class="save-this-data sum-in-preyoga_total" id="preyoga_6"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Corrigió correctamente demostrando conocimiento de las técnicas?</td>
+          		<td><select id="preyoga_7"  class="save-this-data sum-in-preyoga_total" id="preyoga_7"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Explicó que este es nuestro método introductorio y que al ingresar a SwáSthya el alumno aprenderá técnicas más avanzadas e interesantes?</td>
+          		<td><select id="preyoga_8"  class="save-this-data sum-in-preyoga_total" id="preyoga_8"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Logró diferenciar esta práctica de una clase de SwáSthya Yôga: clima, feedback, inducción, iluminación, vocabulario, etc.?</td>
+          		<td><select id="preyoga_9"  class="save-this-data sum-in-preyoga_total" id="preyoga_9"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Tuvo el cuidado de elegir para el examen temas musicales sin voz y que agraden a los alumnos?</td>
+          		<td><select id="preyoga_10"  class="save-this-data sum-in-preyoga_total" id="preyoga_10"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Al finalizar la clase los alumnos quedaron motivados para seguir las próximas etapas de nuestro método?</td>
+          		<td><select id="preyoga_11"  class="save-this-data sum-in-preyoga_total" id="preyoga_11"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Demostró competencia al enseñar los fundamentos de nuestro método?</td>
+          		<td><select id="preyoga_12"  class="save-this-data sum-in-preyoga_total" id="preyoga_12"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Logró transmitir con carisma la importancia de las enseñanzas para mejorar la calidad de vida?</td>
+          		<td><select id="preyoga_13"  class="save-this-data sum-in-preyoga_total" id="preyoga_13"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr>
+  <tr>
+      <td>Total:</td>
+      <td><input type="hidden"  class="save-this-data " id="preyoga_total" value="" /><span id="show_preyoga_total"></span></td>
+  </tr>
+</table>
+</div>
+<p>
+  <h3>Observaciones</h3>
+  <textarea  class="save-this-data " id="preyoga_obs" cols="30" rows="15"></textarea>
+</p>
+<script type="text/javascript">
+
+	function totalPreYoga(){
+		var total = 0;
+		$('.sum-in-preyoga_total').each(function(){total += parseInt($(this).val())});
+		return total;
+	};
+
+	$('.sum-in-preyoga_total').change(function(){
+		$('#show_preyoga_total').text( totalPreYoga() );
+		$('#preyoga_total').val( totalPreYoga() );
+		saveObject($('#preyoga_total'));
+	});
+</script>
+
   </div>
   <div id="tabs-7">
-    en construcción
+    <div stype="float:left">
+<table border="1">
+  <tr>
+    <th coslpan="2">
+      Para el grado de Docente la conferencia se realiza en la Unidades y asisten solamente por los alumnos e instructores de Yôga. Para el grado de Maestro, la conferencia puede ser realizada en cualquier lugar y está dirigida al público en general.
+    </th>
+  </tr>    
+  <tr>
+      <th>Aspectos a evaluar</th><th>Puntaje</th>
+  </tr>
+<tr>
+          		<td>¿La elección del tema fue útil para la buena imagen del Yôga?</td>
+          		<td><select id="disertacion_1"  class="save-this-data sum-in-disertacion_total" id="disertacion_1"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿El abordaje sugirió espiritualismo o misticismo?</td>
+          		<td><select id="disertacion_2"  class="save-this-data sum-in-disertacion_total" id="disertacion_2"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Usó el pizarrón y mostró familiaridad en el uso de la tiza?</td>
+          		<td><select id="disertacion_3"  class="save-this-data sum-in-disertacion_total" id="disertacion_3"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Limpió el pizarrón antes de usarlo?</td>
+          		<td><select id="disertacion_4"  class="save-this-data sum-in-disertacion_total" id="disertacion_4"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Utilizó una diagramación didáctica en el pizarrón?</td>
+          		<td><select id="disertacion_5"  class="save-this-data sum-in-disertacion_total" id="disertacion_5"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Observó fidelidad con relación a los cuadros y esquemas originales?</td>
+          		<td><select id="disertacion_6"  class="save-this-data sum-in-disertacion_total" id="disertacion_6"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿El volumen de la voz fue adecuado?</td>
+          		<td><select id="disertacion_7"  class="save-this-data sum-in-disertacion_total" id="disertacion_7"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿La dicción e impostación de la voz fueron compatibles con el grado para el cual está rindiendo examen?</td>
+          		<td><select id="disertacion_8"  class="save-this-data sum-in-disertacion_total" id="disertacion_8"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿El español fue impecable?</td>
+          		<td><select id="disertacion_9"  class="save-this-data sum-in-disertacion_total" id="disertacion_9"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Pronunció y aplicó el sánscrito correctamente?</td>
+          		<td><select id="disertacion_10"  class="save-this-data sum-in-disertacion_total" id="disertacion_10"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Hubo didáctica y objetividad en la exposición?</td>
+          		<td><select id="disertacion_11"  class="save-this-data sum-in-disertacion_total" id="disertacion_11"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Demostró pleno conocimiento del tema?</td>
+          		<td><select id="disertacion_12"  class="save-this-data sum-in-disertacion_total" id="disertacion_12"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Se relacionó bien con el público?</td>
+          		<td><select id="disertacion_13"  class="save-this-data sum-in-disertacion_total" id="disertacion_13"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Demostró perfecta seguridad?</td>
+          		<td><select id="disertacion_14"  class="save-this-data sum-in-disertacion_total" id="disertacion_14"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Fue convincente?</td>
+          		<td><select id="disertacion_15"  class="save-this-data sum-in-disertacion_total" id="disertacion_15"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Su expresión corporal fue compatible con el nivel por el que compite?</td>
+          		<td><select id="disertacion_16"  class="save-this-data sum-in-disertacion_total" id="disertacion_16"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿La fisonomía fue compatible con el nivel por el que compite?</td>
+          		<td><select id="disertacion_17"  class="save-this-data sum-in-disertacion_total" id="disertacion_17"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿El lenguaje gestual fue compatible con el nivel por el que compite?</td>
+          		<td><select id="disertacion_18"  class="save-this-data sum-in-disertacion_total" id="disertacion_18"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿La apariencia personal, cabello y ropa, sugieren un profesional del nivel por el que compite?</td>
+          		<td><select id="disertacion_19"  class="save-this-data sum-in-disertacion_total" id="disertacion_19"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr><tr>
+          		<td>¿Administró bien el tiempo de la conferencia?</td>
+          		<td><select id="disertacion_20"  class="save-this-data sum-in-disertacion_total" id="disertacion_20"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td>
+          	</tr>
+  <tr>
+      <td>Total:</td>
+      <td><input type="hidden"  class="save-this-data " id="disertacion_total" value="" /><span id="show_disertacion_total"></span></td>
+  </tr>
+</table>
+</div>
+<p>
+  <h3>Observaciones</h3>
+  <textarea  class="save-this-data " id="disertacion_obs" cols="30" rows="15"></textarea>
+</p>
+<script type="text/javascript">
+
+	function totalDisertacion(){
+		var total = 0;
+		$('.sum-in-disertacion_total').each(function(){total += parseInt($(this).val())});
+		return total;
+	};
+
+	$('.sum-in-disertacion_total').change(function(){
+		$('#show_disertacion_total').text( totalDisertacion() );
+		$('#disertacion_total').val( totalDisertacion() );
+		saveObject($('#disertacion_total'));
+	});
+</script>
+
   </div>
   <div id="tabs-8">
     asdfasassddfsdsd    
@@ -341,8 +777,9 @@
   put countdown here
 </div>
 <a class="button" id="print-to-pdf" href="#">Print 2 PDF</a>
-  <script type="text/javascript" src="js/sorteo.js"></script>
-  <script type="text/javascript" src="js/eevivo.js"></script>
+
   <script type="text/javascript" src="js/print2pdf.js"></script>
+  <script type="text/javascript" src="js/auto-save.js"></script>
+  <script type="text/javascript" src="js/eevivo.js"></script>
 </body>
 </html>

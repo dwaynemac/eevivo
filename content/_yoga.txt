@@ -1,0 +1,107 @@
+---
+filter: erb
+---
+<table border="1">
+  <tr>
+      <th>Aspectos a evaluar</th><th>Puntaje</th>
+  </tr>
+<%- i = 0 -%>
+<%=
+          [
+"¿Se presentó con buena apariencia personal? ¿Se esmeró en la belleza de la ropa, cuidados del cabello, etc.?",
+"¿La expresión corporal y fisonómica denotan autoconfianza?",
+"¿Dispuso a los alumnos más adelantados adelante y a los menos adelantados atrás?",
+"¿La presentación del nuevo compañero fue satisfactoria? ¿Resultó en integración efectiva?",
+"¿Tuvo el cuidado de excluir del vocabulario términos apócrifos (espíritu, mente, Dios, calma, equilibrio, etc.)?",
+"¿Mantuvo los ojos abiertos desde el inicio hasta el final de la práctica? ¿La mirada era expresiva?",
+"Apertura:<br/>
+	A. ¿Utilizó Kámala?<br/>
+	B.  ¿Utilizó una música compatible con la conexión al inconsciente?<br/>
+	C. ¿Hizo reconocer al practicante el privilegio de poder estar en la sala, recibiendo a través del instructor el conocimiento de los Maestros Ancestrales?<br/>
+	D. ¿Mencionó el nombre de nuestro Yôga y sus raíces?",
+"Mudrá: ¿consiguió hacer que los practicantes vivenciasen de hecho esa técnica?<br/>
+	A. ¿Definió correctamente el anga, conforme a nuestra tradición?<br/>
+	      1. ¿Escogió una buena música? ¿La música no estaba demasiado alta, de forma de apagar la voz del    instructor?<br/>
+	      2. ¿La música inspiró tanto al instructor como a los practicantes?<br/>
+	      3.  ¿Ella no choca con nuestras raíces?<br/>
+	B.  ¿Indujo el Shiva mudrá correctamente?<br/>
+	C.  ¿Convocó a los practicantes a conectarse con nuestras raíces preclásicas?<br/>
+	D.  ¿Indujo correctamente el prônam mudrá?<br/>
+	E. ¿Aplicó bháva al solicitar a los practicantes que deflagrasen un estado yôgi dentro de ellos?<br/>",
+"Pújá: ¿usó los comandos adecuados? ¿Aplicó visualizaciones convenientes? ¿Los practicantes comprendieron?<br/>
+	A.    ¿Definió correctamente el anga conforme a nuestra tradición?<br/>			
+	B.    ¿La descripción del bhavan pújá generó un sentimiento de respeto y lealtad por la casa que lo acoge?<br/>
+	C.    ¿La aplicación de los atributos de los colores fue correcta?<br/>
+	D.    ¿La inducción al Guru pújá fue convincente?<br/>
+	E.     ¿El Sat Guru pújá, al Maestro del instructor que dicta la práctica, llevó a los practicantes a identificarse con él?<br/>
+	F.     ¿Generó gratitud y reconocimiento?<br/>
+	G.    ¿El Shiva pújá fue bien definido para no permitir interpretaciones místicas?<br/>",
+"10. Mantra: ¿se hicieron mantras coherentes con nuestro linaje? ¿La melodía y el sánscrito eran correctos?",
+"11. Pránáyáma: ¿enseñó técnicas correctas? ¿Consiguió tornar la práctica interesante y agradable?",
+"12. Kriyá: ¿los practicantes comprendieron lo que es un kriyá? ¿Lo ejecutaron correctamente?",
+"13. Ásana: ¿se hicieron ejercicios estéticos? ¿Los pasajes fueron bien explorados?",
+"14. Yôganidrá: ¿se aplicaron las cuatro partes? ¿Se evitaron sugestiones contraproducentes?",
+"15. Samyama: ¿la inducción fue competente para enseñar la concentración, meditación, etc.?",
+"16. ¿Introdujo bien cada anga?<br/>				
+	A.    Informó nº de orden;<br/>			
+	B.    nombre en sánscrito;<br/> 			
+	C.    traducción literal;<br/>			
+	D.    definición de cada anga.",			
+"17. Locución:<br/>				
+	A.    ¿Fue buena la altura de la voz?<br/>			
+	B.    ¿timbre?<br/>			
+	C.    ¿dicción?<br/>			
+	D.    ¿español?<br/>			
+	E.    ¿aplicó una modulación de voz diferente para cada anga?",
+"18. ¿Pronunció y aplicó el sánscrito correctamente, de acuerdo con el CD Sánscrito. Entrenamiento de pronunciación?",
+"19. ¿Utilizó la descripción adecuada para cada técnica transmitida?",				
+"20. ¿Hizo demostraciones convincentes, y en ángulo didáctico?",				
+"21. ¿Corrigió a los que erraron? ¿Y ellos comprendieron la corrección?",				
+"22. ¿Mantuvo el liderazgo sobre el grupo? ¿Pero sin autoritarismo?",				
+"23. ¿Hubo vacíos de silencio injustificables?<br/>				
+	A.    ¿En algún momento la clase se puso pesada?",			
+"24. ¿Introdujo teoría?<br/>				
+	A.    ¿Citó las reglas generales?<br/> 			
+	B.    ¿Mencionó las características principales del SwáSthya Yôga?<br/>			
+	C.    ¿El alumno quedó bien informado sobre nuestro método?",			
+"25. ¿Un practicante antiguo aprendió algo nuevo? ¿Habrá quedado satisfecho y encontrado que valió el precio que pagó?",				
+"26. ¿Ofreció alternativas más adelantadas o menos, conforme el caso? ¿Adaptó la instrucción a cada practicante?",				
+"27. ¿Dio la clase con formato de coreografía? ¿Los practicantes comprendieron y fueron cautivados por ese concepto?",				
+"28. ¿Confirió un minuto de práctica libre en forma de coreografía, al final del sexto anga, después de las invertidas?",				
+"29. ¿Usó músicas adecuadas? ¿La grabación era de buena calidad? ¿La reproducción estaba en el inicio?",				
+"30. ¿Dio el tiempo justo de práctica? ¿La banca no tuvo que avisarle que terminó el tiempo?",				
+"31. ¿Hizo una buena apertura y buen cierre de la clase?",				
+"32. ¿Hizo una pregunta a un alumno después del cierre? ¿La pregunta fue inteligente, útil y educativa?",				
+"33. ¿Dio un aviso antes de despedir al grupo? ¿Eso incrementó la integración?",				
+"34. ¿Oyó en silencio y prestando atención las críticas de los examinadores? ¿Demostró sentido de disciplina y respeto?",				
+"35. ¿Tiene comportamiento educado y afectuoso con colegas e instructores? ¿Merece formar parte de nuestra familia?"				
+          ].map do |text|
+          	"<tr>
+          		<td>#{text}</td>
+          		<td>#{int_select("yoga_#{i+=1}",0,3,:size => 1, :class => "sum-in-yoga_total")}</td>
+          	</tr>"
+          end
+		%>
+  <tr>
+      <td>Total:</td>
+      <td><%= hdn("yoga_total")%><span id="show_yoga_total"></span></td>
+  </tr>
+</table>
+<p>
+  <h3>Observaciones</h3>
+  <%= txt_area("yoga_obs",:size => "30x15")%>
+</p>
+<script type="text/javascript">
+
+	function totalYoga(){
+		var total = 0;
+		$('.sum-in-yoga_total').each(function(){total += parseInt($(this).val())});
+		return total;
+	};
+
+	$('.sum-in-yoga_total').change(function(){
+		$('#show_yoga_total').text( totalYoga() );
+		$('#yoga_total').val( totalYoga() );
+		saveObject($('#yoga_total'));
+	});
+</script>
