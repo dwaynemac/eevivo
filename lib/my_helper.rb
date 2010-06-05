@@ -15,6 +15,17 @@ module MyHelper
     html
   end
 
+  def txt_area(id = nil, options = {})
+    extras = ""
+    options[:save] = true if options[:save].nil?
+    extras << %( class="#{"save-this-data" if options[:save] } #{options[:class]}")
+    extras << %( id="#{id}") unless id.nil?
+    extras << %( size="#{options[:size]}") unless options[:size].nil?
+
+    html = %(<textarea #{extras}>#{options[:value]}</textarea>)
+    html
+  end
+
   def hdn(id, value, options = {})
     extras = ""
     options[:save] = true if options[:save].nil?
@@ -34,7 +45,12 @@ module MyHelper
     html = %(<select id="#{id}" #{extras}>)
     i = from
     while i <= to do
-      html << %(<option value="#{i}">#{i}</option>)
+      if options[:modify].nil?
+        text = i
+      else
+        text = i + options[:modify].to_i
+      end
+      html << %(<option value="#{i}">#{text}</option>)
       i += 1
     end
     html << "</select>"

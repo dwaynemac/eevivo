@@ -4,19 +4,27 @@ extension: js
 layout: nil
 ---
 
-// INITIALIZE FIELDS
-// from cookie
-$('.save-this-data').each( function () {
-  file_name = "eev";
-  $(this).val( $.cookie(file_name+":"+$(this).attr('id')) );
-});
-// from fields them selfs
-$('#show-evaluated-name').text( $('#evaluated_name').val() );
-$('#show-evaluator-name').text( $('#evaluator_name').val() );
+function initializeFields() {
+	// from cookie
+	$('.save-this-data').each( function () {
+	  file_name = "eev";
+	  $(this).val( $.cookie(file_name+":"+$(this).attr('id')) );
+	});
+	
+	// from fields
+	$('#show-evaluated-name').text( $('#evaluated_name').val() );
+	$('#show-evaluator-name').text( $('#evaluator_name').val() );
+	for(i=1;i<=5;i+=1){
+		var value = parseInt($('#asana_'+i).val());
+		$('#asana_name_'+i).text($(asanas).get(value));
+	}
+}
+initializeFields();
 
 // SET AUTO-SAVE
 $('.save-this-data').change( function() {
-  cookie_name = "eev:"+$(this).attr('id');
+  file_name = "eev";
+  cookie_name = file_name+":"+$(this).attr('id');
   cookie_value = $(this).val();
   // cookie expires in one month
   $.cookie(cookie_name, cookie_value,{ expires: 31 });

@@ -26,10 +26,14 @@ filter:    erb
   <link type="text/css" href="css/sunny/jquery-ui-1.8.1.custom.css" rel="stylesheet"/>
   <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
 
-  <!-- JQuery Countdown plugin - http://keith-wood.name/countdown.html -->
+  <!-- JQuery Countdown plugin - http://keith-wood.name/countdown.html
   <style type="text/css">@import "js/jquery.countdown.css";</style>
   <script type="text/javascript" src="js/jquery.countdown.js"></script>
-
+	yet not in use-->
+	
+  <!-- JQuery random plugin -->
+  <script type="text/javascript" src="js/jquery.random.js"></script>
+  
   <!-- JQuery Cookies plugin -->
   <script type="text/javascript" src="js/jquery.cookie.js"></script>
 
@@ -99,8 +103,8 @@ filter:    erb
 </head>
 <body>
   <%= @content %>
+  <script type="text/javascript" src="js/sorteo.js"></script>
   <script type="text/javascript" src="js/eevivo.js"></script>
   <script type="text/javascript" src="js/print2pdf.js"></script>
-  <script type="text/javascript" src="js/sorteo.js"></script>
 </body>
 </html>

@@ -20,8 +20,8 @@ filter: erb
   <%- [1,2,3,4,5].each do |i| -%>
     <tr>
       <td><%= i %>.</td>
-      <td><%= txt("asana_#{i}", {:class => @group_class, :size => 2}) %></td>
-      <td><%= txt("asana_name_#{i}", :class => @group_class) %></td>
+      <td><%= int_select("asana_#{i}",0,107, {:class => @group_class, :size => 2, :modify => "+1"}) %></td>
+      <td><span id="asana_name_<%=i%>"></span></td>
       <td><%= int_select("dem_con_#{i}",0,5,:class => "#{@group_class} update-sorteo_avg") %></td>
       <td><%= int_select("ejec_#{i}",0,5,:class => "#{@group_class} update-sorteo_avg") %></td>
       <td><%= hdn("asana_tot_#{i}",i,:class => "#{@group_class} sum-on-sorteo_avg") %><span id="show-asana-<%= i %>-tot" class="<%= @group_class %>"></span></td>
@@ -33,3 +33,30 @@ filter: erb
     <td><%= hdn("sorteo_avg",nil,:class => @group_class) %><span id="show-sorteo_avg" class="<%= @group_class %>"></span></td>
   </tr>
 </table>
+<p>
+	<a class="button" id="get_random_asana" href="#">Realizar sorteo</a>
+</p>
+<p>
+	<%= txt_area("sorteo_obs")%>
+</p>
+<script type="text/javascript">
+	// enable button functionality
+	$('#get_random_asana').click(function(){makeSorteo();});
+	
+	// set show_asana_name when asana_name changes
+	<%- [1,2,3,4,5].each do |i| -%>
+    $('#asana_name_<%=i%>').change(function(){
+    	$('#show_asana_name_<%=i%>').text($(this).val());
+    });
+  <%- end -%>
+  
+  // set asana_name when asana changes
+  <%- [1,2,3,4,5].each do |i| -%>
+    $('#asana_<%=i%>').change(function(){
+    	var new_asana = $(this).val();
+    	var new_asana_name = $(asanas).get(new_asana);
+    	$('#asana_name_<%=i%>').text( new_asana_name );
+    });
+  <%- end -%>
+  	
+</script>
