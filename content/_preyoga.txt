@@ -44,14 +44,9 @@ filter: erb
 </p>
 <script type="text/javascript">
 
-	function totalPreYoga(){
-		var total = 0;
-		$('.sum-in-preyoga_total').each(function(){total += parseInt($(this).val())});
-		return total;
-	};
-
 	$('.sum-in-preyoga_total').change(function(){
 		$('#show_preyoga_total').text( totalPreYoga() );
+	  $("#show_nota_clase").text(notaClase());
 		$('#preyoga_total').val( totalPreYoga() );
 		saveObject($('#preyoga_total'));
 	});

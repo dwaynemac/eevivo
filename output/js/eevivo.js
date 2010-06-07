@@ -86,13 +86,6 @@
     $('#asana_tot_5').val( new_val )
   });
 
-// AVERAGE
-function calculateSorteoAvg() {
-  sum = 0.0
-  $('.sum-on-sorteo_avg').each( function(){ sum += parseInt($(this).val()); });
-  return sum/$('.sum-on-sorteo_avg').length
-}
-
 // initalize on load
 $('#sorteo_avg').val( calculateSorteoAvg() );
 $('#show-sorteo_avg').text( calculateSorteoAvg() );

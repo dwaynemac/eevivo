@@ -37,6 +37,7 @@
   <script type="text/javascript" src="js/jquery.cookie.js"></script>
 
   <!-- EEVivo  -->
+  <script type="text/javascript" src="js/eevivo.calculations.js"></script>
   <script type="text/javascript" src="js/sorteo.js"></script>
 
   <script type="text/javascript">
@@ -593,14 +594,9 @@
 </p>
 <script type="text/javascript">
 
-	function totalYoga(){
-		var total = 0;
-		$('.sum-in-yoga_total').each(function(){total += parseInt($(this).val())});
-		return total;
-	};
-
 	$('.sum-in-yoga_total').change(function(){
 		$('#show_yoga_total').text( totalYoga() );
+	  $("#show_nota_clase").text(notaClase());
 		$('#yoga_total').val( totalYoga() );
 		saveObject($('#yoga_total'));
 	});
@@ -665,14 +661,9 @@
 </p>
 <script type="text/javascript">
 
-	function totalPreYoga(){
-		var total = 0;
-		$('.sum-in-preyoga_total').each(function(){total += parseInt($(this).val())});
-		return total;
-	};
-
 	$('.sum-in-preyoga_total').change(function(){
 		$('#show_preyoga_total').text( totalPreYoga() );
+	  $("#show_nota_clase").text(notaClase());
 		$('#preyoga_total').val( totalPreYoga() );
 		saveObject($('#preyoga_total'));
 	});
@@ -763,14 +754,9 @@
 </p>
 <script type="text/javascript">
 
-	function totalDisertacion(){
-		var total = 0;
-		$('.sum-in-disertacion_total').each(function(){total += parseInt($(this).val())});
-		return total;
-	};
-
 	$('.sum-in-disertacion_total').change(function(){
 		$('#show_disertacion_total').text( totalDisertacion() );
+		$('#show_nota_disertacion').text( notaDisertacion() );
 		$('#disertacion_total').val( totalDisertacion() );
 		saveObject($('#disertacion_total'));
 	});
@@ -789,15 +775,15 @@
   </tr>
   <tr>
     <td><span class="show-evaluator-name"></span></td>
-    <td>teo</td>
+    <td><input type="textfield"  class="save-this-data " id="nota_teorico"/></td>
     <td><span id="show_nota_practica"></span></td>
-    <td>cla</td>
-    <td>dise</td>
+    <td><span id="show_nota_clase"></span></td>
+    <td><span id="show_nota_disertacion"></span></td>
     <td>total</td>
   </tr>
     <tr>
       <td><input type="textfield"  class="save-this-data " id="name_evaluator_0"/></td>
-      <td><input type="textfield"  class="save-this-data " id="teoria_evaluator_0"/></td>
+      <td><span class="show-nota-teorico"></span></td>
       <td><input type="textfield"  class="save-this-data " id="practica_evaluator_0"/></td>
       <td><input type="textfield"  class="save-this-data " id="clase_evaluator_0"/></td>
       <td><input type="textfield"  class="save-this-data " id="disertacion_evaluator_0"/></td>
@@ -805,7 +791,7 @@
     </tr>
     <tr>
       <td><input type="textfield"  class="save-this-data " id="name_evaluator_1"/></td>
-      <td><input type="textfield"  class="save-this-data " id="teoria_evaluator_1"/></td>
+      <td><span class="show-nota-teorico"></span></td>
       <td><input type="textfield"  class="save-this-data " id="practica_evaluator_1"/></td>
       <td><input type="textfield"  class="save-this-data " id="clase_evaluator_1"/></td>
       <td><input type="textfield"  class="save-this-data " id="disertacion_evaluator_1"/></td>
@@ -814,18 +800,12 @@
 </table>
 <script type="text/javascript">
   $("#show_nota_practica").text(notaPractica());
-  $('.sum-in-coreo_total').change(function(){
-		$("#show_nota_practica").text(notaPractica());
-	});
-	$('.sum-in-sorteo_total').change(function(){
-		$("#show_nota_practica").text(notaPractica());
-	});
-	
-	function notaPractica(){
-    nota_coreo = totalCoreo();
-    nota_sorteo = calculateSorteoAvg()*10;
-    return (nota_coreo + nota_sorteo) / 2.0;
-  }
+  $("#show_nota_clase").text(notaClase());
+  $("#show_nota_disetacion").text(notaDisetacion());
+  
+  $("#nota_teorico").change(function(){
+    $(".show-nota-teorico").text($(this).val());
+  });
 </script>
     
   </div>

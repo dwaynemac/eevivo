@@ -93,14 +93,9 @@ filter: erb
 </p>
 <script type="text/javascript">
 
-	function totalYoga(){
-		var total = 0;
-		$('.sum-in-yoga_total').each(function(){total += parseInt($(this).val())});
-		return total;
-	};
-
 	$('.sum-in-yoga_total').change(function(){
 		$('#show_yoga_total').text( totalYoga() );
+	  $("#show_nota_clase").text(notaClase());
 		$('#yoga_total').val( totalYoga() );
 		saveObject($('#yoga_total'));
 	});

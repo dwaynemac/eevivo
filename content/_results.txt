@@ -12,16 +12,16 @@ filter: erb
   </tr>
   <tr>
     <td><span class="show-evaluator-name"></span></td>
-    <td>teo</td>
+    <td><%= txt("nota_teorico") %></td>
     <td><span id="show_nota_practica"></span></td>
-    <td>cla</td>
-    <td>dise</td>
+    <td><span id="show_nota_clase"></span></td>
+    <td><span id="show_nota_disertacion"></span></td>
     <td>total</td>
   </tr>
   <%- (0...2).each do |i| -%>
     <tr>
       <td><%= txt("name_evaluator_#{i}") %></td>
-      <td><%= txt("teoria_evaluator_#{i}") %></td>
+      <td><span class="show-nota-teorico"></span></td>
       <td><%= txt("practica_evaluator_#{i}") %></td>
       <td><%= txt("clase_evaluator_#{i}") %></td>
       <td><%= txt("disertacion_evaluator_#{i}") %></td>
@@ -31,10 +31,10 @@ filter: erb
 </table>
 <script type="text/javascript">
   $("#show_nota_practica").text(notaPractica());
-	
-	function notaPractica(){
-    nota_coreo = totalCoreo();
-    nota_sorteo = calculateSorteoAvg()*10;
-    return (nota_coreo + nota_sorteo) / 2.0;
-  }
+  $("#show_nota_clase").text(notaClase());
+  $("#show_nota_disetacion").text(notaDisetacion());
+  
+  $("#nota_teorico").change(function(){
+    $(".show-nota-teorico").text($(this).val());
+  });
 </script>

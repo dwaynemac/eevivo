@@ -60,14 +60,9 @@ filter: erb
 </p>
 <script type="text/javascript">
 
-	function totalDisertacion(){
-		var total = 0;
-		$('.sum-in-disertacion_total').each(function(){total += parseInt($(this).val())});
-		return total;
-	};
-
 	$('.sum-in-disertacion_total').change(function(){
 		$('#show_disertacion_total').text( totalDisertacion() );
+		$('#show_nota_disertacion').text( notaDisertacion() );
 		$('#disertacion_total').val( totalDisertacion() );
 		saveObject($('#disertacion_total'));
 	});

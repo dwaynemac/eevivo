@@ -41,6 +41,7 @@ filter:    erb
   <script type="text/javascript" src="js/jquery.cookie.js"></script>
 
   <!-- EEVivo  -->
+  <script type="text/javascript" src="js/eevivo.calculations.js"></script>
   <script type="text/javascript" src="js/sorteo.js"></script>
 
   <script type="text/javascript">
