@@ -5,3 +5,8 @@ Actual output is on output/ directory.
 =Usage
 
 Just open output/index.html 
+
+=AIR
+
+open: cd source/ && adl application.xml
+package: adt -package ...
